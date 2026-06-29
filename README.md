@@ -6,7 +6,7 @@
 *Turn a few honest answers into a personalised, explainable map of how you actually operate — then track it over time.*
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Play%20Now-04EEDD?style=for-the-badge)](https://antarabarman.github.io/Project1/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-3b82f6?style=for-the-badge)](LICENSE)
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-3b82f6?style=for-the-badge)](LICENSE)
 [![Made with](https://img.shields.io/badge/Built%20with-HTML%20%C2%B7%20Canvas%20%C2%B7%20SVG-a855f7?style=for-the-badge)](#tech)
 [![Cost](https://img.shields.io/badge/Hosting-%240%20forever-22c55e?style=for-the-badge)](docs/DEPLOYMENT.md)
 
@@ -123,7 +123,7 @@ Contributions, ideas, and issues are welcome — see **[CONTRIBUTING.md](CONTRIB
 
 ## 📄 License
 
-[MIT](LICENSE) © 2026 **Antara Barman** — free to use, learn from, and build on.
+[CC BY-NC 4.0](LICENSE) © 2026 **Antara Barman** — free to use, share, and learn from for non-commercial purposes, with credit. **Selling or commercial use is not permitted.**
 
 <div align="center">
 <sub>Built as an open, educational portfolio project. An honest mirror, not a horoscope.</sub>
