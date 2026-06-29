@@ -437,6 +437,70 @@
   .progress-fill{transition:width .35s ease, background .4s ease}
   #dim-label{transition:color .4s ease;font-weight:700}
 
+  /* ===== Phase 1 premium upgrades ===== */
+  .insight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .insight-card{background:rgba(255,255,255,.04);border:1px solid var(--panel-line);border-radius:14px;padding:16px 18px}
+  .insight-card .ic-top{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+  .insight-card .ic-emoji{font-size:22px;line-height:1}
+  .insight-card .ic-title{font-family:'Fraunces',serif;font-weight:600;font-size:15.5px;color:#fbf8ef}
+  .insight-card .ic-tag{font-size:11px;font-weight:700;color:#04241f;border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:8px}
+  .insight-card p{font-size:13.5px;line-height:1.55;color:var(--text-light)}
+
+  /* badges */
+  .badge-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:6px}
+  .badge{display:flex;flex-direction:column;align-items:center;gap:5px;width:104px;text-align:center}
+  .badge .b-coin{width:62px;height:62px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;
+    box-shadow:0 8px 18px -8px rgba(0,0,0,.55);border:2px solid rgba(255,255,255,.5)}
+  .badge .b-name{font-size:12px;font-weight:700;color:#fbf8ef;line-height:1.2}
+  .badge.locked{opacity:1;filter:none}
+  .badge.locked .b-coin{background:#2a2f3a !important;border-color:var(--panel-line);opacity:.5;filter:grayscale(.5)}
+  .badge.locked .b-name{color:#aeb4c2}
+  .progress-note{margin-top:14px;background:rgba(25,213,191,.10);border:1px solid var(--gold-deep);border-radius:12px;padding:14px 16px;font-size:14px;color:#eef3f1;line-height:1.6}
+  .progress-note b{color:var(--gold)}
+  .delta-up{color:#7ee08a;font-weight:700} .delta-down{color:#ff9b8a;font-weight:700} .delta-same{color:var(--text-light-soft);font-weight:700}
+
+  /* toolkit */
+  .toolkit-grid{display:flex;flex-direction:column;gap:10px}
+  .tool-item{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.03);border:1px solid var(--panel-line);border-radius:12px;padding:12px 14px}
+  .tool-cat{flex-shrink:0;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;border-radius:7px;padding:4px 9px;margin-top:1px;min-width:78px;text-align:center}
+  .tool-body{font-size:13.5px;line-height:1.5;color:var(--text-light)}
+  .tool-body b{color:#fbf8ef}
+  .tool-body a{color:var(--gold);text-decoration:none} .tool-body a:hover{text-decoration:underline}
+
+  /* PDF light-theme additions */
+  #pdf-capture-area .insight-card{background:#fbfbf8 !important;border:1px solid #e4ddd0 !important}
+  #pdf-capture-area .insight-card .ic-title,#pdf-capture-area .insight-card p,#pdf-capture-area .badge .b-name,
+  #pdf-capture-area .progress-note,#pdf-capture-area .tool-body,#pdf-capture-area .tool-body b{color:#1c1812 !important}
+  #pdf-capture-area .tool-item{background:#fbfbf8 !important}
+  #pdf-capture-area .tool-body a{color:#0E7A6E !important}
+
+  /* ===== Phase 2: avatar, story, DNA, domains, recruiter, wrapped, timeline ===== */
+  .avatar-wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .avatar-emblem{width:84px;height:84px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:44px;background:linear-gradient(135deg,#0a3550,#0e7490);border:2px solid var(--gold-deep);flex-shrink:0}
+  .avatar-name{font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:#fbf8ef}
+  .avatar-line{font-size:14px;color:var(--text-light-soft)}
+  .story-text{font-size:15px;line-height:1.7;color:var(--text-light)}
+  .dna-code{font-family:monospace;font-size:12.5px;color:var(--gold);background:rgba(25,213,191,.08);border:1px dashed var(--gold-deep);border-radius:8px;padding:9px 12px;margin-bottom:14px;word-break:break-word}
+  .dna-row{display:flex;align-items:center;gap:12px;margin-bottom:7px}
+  .dna-name{width:108px;font-size:12.5px;color:var(--text-light);font-weight:600;flex-shrink:0}
+  .dna-blocks{font-family:monospace;font-size:17px;letter-spacing:2px;white-space:nowrap}
+  .domain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:12px}
+  .domain-card{background:rgba(255,255,255,.04);border:1px solid var(--panel-line);border-radius:12px;padding:14px 16px}
+  .domain-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+  .domain-name{font-weight:700;color:#fbf8ef;font-size:14.5px}
+  .domain-pct{font-weight:800;font-variant-numeric:tabular-nums}
+  .domain-bar{height:8px;border-radius:5px;background:rgba(255,255,255,.1);overflow:hidden;margin-bottom:8px}
+  .domain-fill{height:100%;border-radius:5px}
+  .domain-read{font-size:12.5px;color:var(--text-light-soft);line-height:1.45}
+  .wrap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .wrap-card{border-radius:16px;padding:18px 16px;color:#fff;box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
+  .wrap-card .w-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.9;font-weight:700}
+  .wrap-card .w-value{font-family:'Fraunces',serif;font-size:18px;margin-top:6px;line-height:1.25;font-weight:700}
+  .timeline-wrap{margin-top:14px}
+  #pdf-capture-area .avatar-name,#pdf-capture-area .story-text,#pdf-capture-area .domain-name,#pdf-capture-area .dna-name{color:#1c1812 !important}
+  #pdf-capture-area .domain-read,#pdf-capture-area .avatar-line{color:#4a4332 !important}
+  #pdf-capture-area .domain-card{background:#fbfbf8 !important}
+
   /* email controls */
   .deliver-grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
   .deliver-grid input { flex:1; min-width:180px; }
@@ -625,6 +689,14 @@
       </div>
     </div>
 
+    <div class="section-card accent-charts">
+      <div class="avatar-wrap">
+        <div class="avatar-emblem" id="avatar-emblem"></div>
+        <div><div class="avatar-name" id="avatar-name"></div><div class="avatar-line" id="avatar-line"></div></div>
+      </div>
+      <p class="story-text" id="story-text" style="margin-top:14px"></p>
+    </div>
+
     <div class="section-card accent-score">
       <p class="label-xl">Your Pattern Score</p>
       <p class="label-sub">Like a credit score reads your financial history, this reads your behavioural history — a single 300–900 number built from all your answers. It's blunt on purpose.</p>
@@ -644,6 +716,21 @@
         <div class="radar-box"><div id="radar-svg-wrap"></div></div>
         <div class="bars-box"><div id="dimbars-wrap"></div></div>
       </div>
+    </div>
+
+    <div class="section-card accent-charts">
+      <p class="label-xl">🧬 Your Pattern DNA</p>
+      <p class="label-sub">Your unique signature across all 10 traits — nobody else's reads exactly like this.</p>
+      <div class="dna-code" id="dna-code"></div>
+      <div id="dna-bars"></div>
+    </div>
+
+    <div class="section-card accent-score">
+      <p class="label-xl">🏅 Badges you earned</p>
+      <p class="label-sub">Unlocked from the shape of your answers. Locked ones show what you're closest to next.</p>
+      <div class="badge-row" id="badge-row"></div>
+      <div class="progress-note" id="progress-note" style="display:none"></div>
+      <div class="timeline-wrap" id="timeline-wrap"></div>
     </div>
 
     <div class="section-card accent-nature">
@@ -667,6 +754,24 @@
       <ul class="pt-list" id="pattern-points"></ul>
     </div>
 
+    <div class="section-card accent-charts">
+      <p class="label-xl">🧠 Your styles, decoded</p>
+      <p class="label-sub">A read on <em>how</em> you operate — your decision-making, communication, stress and learning styles, plus what surprised us, your hidden potential, and your blind spots.</p>
+      <div class="insight-grid" id="insight-grid"></div>
+    </div>
+
+    <div class="section-card accent-notice">
+      <p class="label-xl">🌐 Your life domains</p>
+      <p class="label-sub">The same patterns, projected onto the areas of life they actually play out in.</p>
+      <div class="domain-grid" id="domain-grid"></div>
+    </div>
+
+    <div class="section-card accent-triggers">
+      <p class="label-xl">💼 Recruiter mode — professional profile</p>
+      <p class="label-sub">The same data, reframed as workplace competencies. Screenshot-ready for a CV or portfolio.</p>
+      <div id="recruiter-bars"></div>
+    </div>
+
     <div class="section-card accent-scenario">
       <p class="label-xl">Where this will bite you</p>
       <p class="label-sub">Two real situations your weakest dimensions tend to show up in — and the move that breaks the loop.</p>
@@ -687,6 +792,12 @@
     <div class="section-card accent-books">
       <p class="label">Worth reading</p>
       <div id="book-list"></div>
+    </div>
+
+    <div class="section-card accent-books">
+      <p class="label-xl">🧰 Your growth toolkit</p>
+      <p class="label-sub">Hand-picked for your two weakest dimensions — beyond books: a podcast, a talk, a daily habit, a meditation, and an app.</p>
+      <div class="toolkit-grid" id="toolkit-grid"></div>
     </div>
 
     <div class="section-card accent-brain">
@@ -729,15 +840,23 @@
       <div id="triggers-body"></div>
     </div>
 
+    <div class="section-card accent-score">
+      <p class="label-xl">🎁 Your Pattern, Wrapped</p>
+      <p class="label-sub">The headline version — made to screenshot and share.</p>
+      <div class="wrap-grid" id="wrap-grid"></div>
+    </div>
+
     <p class="disclaimer">This analysis is generated from patterns in your answers, not a clinical assessment. It's meant as a mirror for reflection, not a fixed label — you know yourself better than any quiz can.</p>
     <p class="disclaimer" style="margin-top: 8px; padding-top: 0; border-top: none;">Decode your pattern, created by <b>Antara Barman</b>.</p>
     </div>
 
     <div class="result-actions">
       <button class="btn-secondary" onclick="restartGame()">Retake with new questions</button>
+      <button class="btn-ghost" id="share-btn" onclick="generateShareCard()">📸 Get my shareable card</button>
       <button class="btn-ghost" id="html-btn" onclick="downloadHtmlReport()">Save report as file ↓</button>
       <button class="btn-primary" id="pdf-btn" onclick="downloadPdf()">Download my report as PDF ↓</button>
     </div>
+    <canvas id="share-canvas" width="1080" height="1080" style="display:none"></canvas>
     <p class="share-note" id="pdf-status"></p>
     <p class="share-note no-print" id="email-status" style="margin-top:6px;"></p>
   </div>
@@ -2210,6 +2329,17 @@ function renderV2(dimScores, overall){
   document.getElementById('brain-anim').innerHTML=brainSVG();
   // triggers
   document.getElementById('triggers-body').innerHTML=buildTriggers(dimScores);
+  // Phase 1 premium upgrades
+  renderInsights(dimScores);
+  renderBadgesProgress(dimScores);
+  renderToolkit(dimScores);
+  // Phase 2 features
+  renderAvatarStory(dimScores);
+  renderDNA(dimScores);
+  renderDomains(dimScores);
+  renderRecruiter(dimScores);
+  renderWrapped(dimScores);
+  renderTimeline();
 }
 
 /* ---------- 11. Email delivery (no hosting) + file download ---------- */
@@ -2266,6 +2396,362 @@ function downloadHtmlReport(){
   a.download=(profile.name?profile.name.trim().replace(/\s+/g,'-')+'-':'')+'pattern-report.html';
   document.body.appendChild(a); a.click(); a.remove();
   document.getElementById('email-status').style.color=''; document.getElementById('email-status').textContent='Saved a copy to your downloads — you can attach it to any email yourself.';
+}
+
+/* =========================================================================
+   PHASE 1 — premium insights, badges + progress, growth toolkit, share card
+   (all rule-based, runs fully client-side — no backend, no API keys)
+   ========================================================================= */
+
+/* ---------- Premium insights (the "smart" engine) ---------- */
+function buildInsights(d, tr){
+  const ins=[];
+  const sorted=Object.entries(d).sort((a,b)=>b[1]-a[1]);
+  const top=sorted[0], low=sorted[sorted.length-1];
+  const L=k=>PARAMS[k].label.toLowerCase();
+  // decision-making
+  let dm;
+  if(d.selftrust>=7&&d.clarity>=7) dm="Decisive and self-directed. You decide on your own read of a situation and rarely relitigate it — fast, just worth a sanity-check on the big calls.";
+  else if(d.selftrust<=4) dm="Consensus-seeking. You gather outside input before committing. It adds safety, but past a point it outsources decisions you're capable of making alone.";
+  else if(d.adaptability>=7&&d.clarity<=4) dm="Adaptive but searching. You change course easily — a real strength — but without a fixed target it can read as chasing whatever's loudest.";
+  else if(d.action<=4) dm="Deliberate. You weigh options thoroughly before moving; the main risk is the window closing while you weigh.";
+  else dm="Balanced. You blend gut instinct with input and adjust as you go — a flexible, middle-of-the-road style.";
+  ins.push({e:'🧭',t:'Decision-making style',c:'#14b8a6',x:dm});
+  // communication
+  let cm;
+  if(d.boundaries>=7&&d.selftrust>=7) cm="Direct and boundaried. You say what you mean and protect your limits — clear, occasionally blunt.";
+  else if(d.boundaries<=4) cm="Accommodating. You read the room and keep the peace — sometimes at the cost of saying what you actually need.";
+  else if(d.awareness>=7) cm="Thoughtful and measured. You notice the dynamics in a room and choose your words before you speak.";
+  else cm="Even-handed. You adapt your tone to the situation rather than defaulting to one mode.";
+  ins.push({e:'💬',t:'Communication style',c:'#ec4899',x:cm});
+  // stress response
+  let sr;
+  if(d.resilience>=7) sr="Steady under load. Pressure rarely knocks you far off line, and you recover quickly.";
+  else if(d.resilience<=4&&d.patience<=4) sr="Reactive, then recovering. Stress lands hard at first and can spill into the next day before you reset.";
+  else if(d.adaptability<=4) sr="You brace and hold. Under stress you tend to grip the original plan tighter instead of adjusting.";
+  else sr="Moderate. Stress affects you, but you generally find your footing within a day or two.";
+  ins.push({e:'🌊',t:'Stress response',c:'#22c55e',x:sr});
+  // learning style
+  let ls;
+  if(d.growth>=7&&d.awareness>=7) ls="Reflective learner. You pull lessons from setbacks — yours and other people's — and update fast.";
+  else if(d.growth<=4) ls="Experiential learner. Lessons tend to land through direct experience rather than observation — effective, but expensive.";
+  else if(d.adaptability>=7) ls="Experimental. You learn by trying, adjusting, and trying again.";
+  else ls="Steady learner. You build understanding gradually and apply it once it feels solid.";
+  ins.push({e:'📚',t:'Learning style',c:'#84cc16',x:ls});
+  // what surprised us
+  ins.push({e:'✨',t:'What surprised us',c:'#f59e0b',x:`For someone strong in ${L(top[0])} (${top[1]*10}/100), your ${L(low[0])} sitting at ${low[1]*10}/100 is the sharpest contrast in your profile — and that gap is exactly where the most growth is hiding.`});
+  // hidden potential
+  const cand = sorted.slice(2).find(([k,v])=>v>=5) || sorted[2];
+  ins.push({e:'💎',t:'Hidden potential',c:'#a855f7',x:`Your ${L(cand[0])} (${cand[1]*10}/100) is quietly solid but not yet one of your headline strengths. Lean into it on purpose and it could become a signature.`});
+  // blind spot
+  ins.push({e:'🕳️',t:'Likely blind spot',c:'#ef4444',x:`${PARAMS[low[0]].label} (${low[1]*10}/100). ${IMPROVEMENT_PHRASES[low[0]]} Because it scores low, you may not even notice it running.`});
+  return ins;
+}
+function renderInsights(d){
+  const g=document.getElementById('insight-grid'); g.innerHTML='';
+  buildInsights(d, trickyProfile).forEach(i=>{
+    const el=document.createElement('div'); el.className='insight-card';
+    el.innerHTML=`<div class="ic-top"><span class="ic-emoji">${i.e}</span><span class="ic-title">${i.t}</span></div><span class="ic-tag" style="background:${i.c}">${i.t.split(' ')[0]}</span><p>${i.x}</p>`;
+    g.appendChild(el);
+  });
+}
+
+/* ---------- Gamification: badges + progress ---------- */
+const BADGES=[
+ {emoji:'🦉',name:'Curious Thinker',color:'#3b82f6',cond:d=>d.awareness>=7&&d.growth>=7,gap:d=>Math.max(0,7-d.awareness)+Math.max(0,7-d.growth)},
+ {emoji:'🧮',name:'Logical Mind',color:'#14b8a6',cond:d=>d.clarity>=7,gap:d=>7-d.clarity},
+ {emoji:'🌱',name:'Growth Seeker',color:'#84cc16',cond:d=>d.growth>=7,gap:d=>7-d.growth},
+ {emoji:'🧘',name:'Calm Leader',color:'#22c55e',cond:d=>d.resilience>=7&&d.boundaries>=6,gap:d=>Math.max(0,7-d.resilience)+Math.max(0,6-d.boundaries)},
+ {emoji:'⚙️',name:'Systems Builder',color:'#f59e0b',cond:d=>d.discipline>=7,gap:d=>7-d.discipline},
+ {emoji:'⚡',name:'Fast Mover',color:'#ef4444',cond:d=>d.action>=7,gap:d=>7-d.action},
+ {emoji:'🧭',name:'Self-Navigator',color:'#a855f7',cond:d=>d.selftrust>=7,gap:d=>7-d.selftrust},
+ {emoji:'🌊',name:'Shape-Shifter',color:'#06b6d4',cond:d=>d.adaptability>=7,gap:d=>7-d.adaptability},
+ {emoji:'⏳',name:'Long-Gamer',color:'#6366f1',cond:d=>d.patience>=7,gap:d=>7-d.patience},
+ {emoji:'🛡️',name:'Boundary Keeper',color:'#ec4899',cond:d=>d.boundaries>=7,gap:d=>7-d.boundaries},
+ {emoji:'🏆',name:'All-Rounder',color:'#eab308',cond:d=>Math.min(...Object.values(d))>=6,gap:d=>6-Math.min(...Object.values(d))}
+];
+function renderBadgesProgress(d){
+  const row=document.getElementById('badge-row'); row.innerHTML='';
+  const earned=BADGES.filter(b=>b.cond(d));
+  const locked=BADGES.filter(b=>!b.cond(d)).sort((a,b)=>a.gap(d)-b.gap(d));
+  const list=earned.concat(locked).slice(0, Math.min(8, Math.max(earned.length, earned.length+3)));
+  if(list.length<Math.min(8,BADGES.length)) list.push(...earned.concat(locked).slice(list.length, Math.min(8,BADGES.length)));
+  earned.concat(locked).slice(0,8).forEach(b=>{
+    const isE=earned.indexOf(b)>=0;
+    const el=document.createElement('div'); el.className='badge'+(isE?'':' locked');
+    el.innerHTML=`<div class="b-coin" style="${isE?'background:'+b.color:''}">${b.emoji}</div><div class="b-name">${b.name}</div>`;
+    row.appendChild(el);
+  });
+  lastBadges=earned;
+  recordAndRenderProgress(d);
+}
+function recordAndRenderProgress(d){
+  const note=document.getElementById('progress-note');
+  let hist=[]; try{hist=JSON.parse(localStorage.getItem('dyp-history')||'[]');}catch(e){}
+  const score=lastPatternScore?lastPatternScore.score:0;
+  const prev=hist.length?hist[hist.length-1]:null;
+  hist.push({d:Date.now(),score}); if(hist.length>30) hist=hist.slice(-30);
+  try{localStorage.setItem('dyp-history',JSON.stringify(hist));}catch(e){}
+  const times=hist.length;
+  note.style.display='block';
+  if(prev){
+    const delta=score-prev.score;
+    const cls=delta>0?'delta-up':delta<0?'delta-down':'delta-same';
+    const sign=delta>0?('+'+delta):(delta<0?String(delta):'no change');
+    note.innerHTML=`📈 <b>Progress:</b> last time you scored <b>${prev.score}</b>, now <b>${score}</b> — <span class="${cls}">${sign}</span>. You've decoded your pattern <b>${times}</b> times. Come back monthly to watch the trend move.`;
+  } else {
+    note.innerHTML=`📈 <b>This is your baseline.</b> Your Pattern Score is <b>${score}/900</b>. It's saved on this device — retake in a month and you'll see exactly what moved.`;
+  }
+}
+
+/* ---------- Richer growth toolkit ---------- */
+const TOOLKIT={
+ awareness:{podcast:["The Happiness Lab — Dr. Laurie Santos","science-backed episodes on noticing your own mind"],habit:"Each night, write one line: the moment you reacted strongest today, and what came right before it.",meditation:"A 5-minute daily 'noting' practice — label each thought 'thinking' and let it pass.",app:["Insight Timer","thousands of free guided meditations for self-observation"]},
+ action:{podcast:["The Tim Ferriss Show","tactics from high performers on starting before you feel ready"],habit:"Use a 2-minute rule: the moment you notice avoidance, do just the first two minutes.",meditation:"3 minutes of box breathing before a task you've been dodging.",app:["Streaks","track one daily action and keep the chain unbroken"]},
+ discipline:{podcast:["The Diary of a CEO","long talks on the systems behind consistent people"],habit:"Pre-decide tomorrow's single most important task tonight, in writing.",meditation:"Two minutes of stillness at the same time each day to anchor your routine.",app:["Habitica","turn your habits into a game with streaks and rewards"]},
+ resilience:{podcast:["Feel Better, Live More — Dr. Rangan Chatterjee","practical resilience and recovery"],habit:"Define one fixed 'reset ritual' you run within 24 hours of any setback.",meditation:"The physiological sigh — two inhales through the nose, one long exhale, ×5.",app:["Headspace","short courses on stress and bouncing back"]},
+ adaptability:{podcast:["WorkLife with Adam Grant","rethinking and updating how you operate"],habit:"Once a week ask: what am I still doing out of habit that no longer fits?",meditation:"A 5-minute open-awareness sit — notice the urge to control and let it soften.",app:["Reflectly","a guided journal that nudges you to reframe"]},
+ selftrust:{podcast:["The Mel Robbins Podcast","building decision confidence"],habit:"Make one small call this week without asking anyone first; note why you trust it.",meditation:"A short self-compassion meditation before a hard decision.",app:["Finch","a self-care pet that rewards acting on your own judgment"]},
+ boundaries:{podcast:["Where Should We Begin? — Esther Perel","the real dynamics of saying no"],habit:"Practice one low-stakes 'no' before this week ends.",meditation:"A grounding body-scan to catch resentment early, before you over-commit.",app:["I Am","daily affirmations for holding your limits"]},
+ patience:{podcast:["The Knowledge Project — Shane Parrish","long-game thinking"],habit:"Track a leading indicator (effort, not outcome) so 'no result yet' stops reading as failing.",meditation:"A 10-minute breath-counting sit to build tolerance for stillness.",app:["Calm","daily sessions for sitting with discomfort"]},
+ clarity:{podcast:["The Tim Ferriss Show","guests on choosing what to optimise for"],habit:"Write one sentence — what am I actually optimising for this year? Re-read it weekly.",meditation:"A 5-minute values reflection picturing the year you actually want.",app:["Sunsama","plan each day against what truly matters"]},
+ growth:{podcast:["Hidden Brain — Shankar Vedantam","the psychology of learning and change"],habit:"Before a big move, find one person who failed at it and extract the lesson first.",meditation:"A brief 'beginner's mind' sit — approach a stuck problem as if it were new.",app:["Coach.me","habit coaching and accountability"]}
+};
+function buildToolkitFor(k){
+  const tk=TOOLKIT[k], b=BOOKS[k], w=WATCH_RECS[k], col=PARAMS[k].color;
+  return [
+   {cat:'Book',col,html:`<b>${b.title}</b> — ${b.author}. ${b.why}`},
+   {cat:'Talk',col,html:`<b>${w.title}</b> · ${w.channel}. <a href="${w.url}" target="_blank" rel="noopener">Watch ↗</a>`},
+   {cat:'Podcast',col,html:`<b>${tk.podcast[0]}</b> — ${tk.podcast[1]}.`},
+   {cat:'Daily habit',col,html:tk.habit},
+   {cat:'Meditation',col,html:tk.meditation},
+   {cat:'App',col,html:`<b>${tk.app[0]}</b> — ${tk.app[1]}.`}
+  ];
+}
+function renderToolkit(d){
+  const weak=Object.entries(d).sort((a,b)=>a[1]-b[1]).slice(0,2).map(([k])=>k);
+  const wrap=document.getElementById('toolkit-grid'); wrap.innerHTML='';
+  weak.forEach(k=>{
+    const head=document.createElement('p');
+    head.style.cssText='font-size:13px;font-weight:700;margin:6px 0 2px;color:'+PARAMS[k].color;
+    head.textContent='For your '+PARAMS[k].label.toLowerCase()+':';
+    wrap.appendChild(head);
+    buildToolkitFor(k).forEach(it=>{
+      const el=document.createElement('div'); el.className='tool-item';
+      el.innerHTML=`<span class="tool-cat" style="background:${it.col}22;color:${it.col}">${it.cat}</span><span class="tool-body">${it.html}</span>`;
+      wrap.appendChild(el);
+    });
+  });
+}
+
+let lastBadges=[];
+
+/* =========================================================================
+   PHASE 2 — avatar, story, Pattern DNA, life domains, recruiter mode,
+   Mind Wrapped, and Pattern Timeline (all rule-based, client-side)
+   ========================================================================= */
+const AVATARS={
+ explorer:{name:'The Explorer',emoji:'🧭',dims:['awareness','growth','adaptability'],line:'curious and always scanning for the next pattern to decode'},
+ architect:{name:'The Architect',emoji:'📐',dims:['discipline','clarity','patience'],line:'you build slow, solid systems that outlast motivation'},
+ strategist:{name:'The Strategist',emoji:'♟️',dims:['clarity','selftrust','patience'],line:'you see several moves ahead and back your own read'},
+ builder:{name:'The Builder',emoji:'🔨',dims:['action','discipline','adaptability'],line:'you turn ideas into motion before others finish debating'},
+ visionary:{name:'The Visionary',emoji:'🌠',dims:['growth','clarity','adaptability'],line:'you chase what could be, and adapt fast to get there'},
+ guardian:{name:'The Guardian',emoji:'🛡️',dims:['boundaries','resilience','selftrust'],line:'steady and self-protective — hard to knock off course'},
+ catalyst:{name:'The Catalyst',emoji:'⚡',dims:['action','adaptability','awareness'],line:'you create momentum and change the room you walk into'}
+};
+function buildAvatar(d){
+  let best=AVATARS.explorer,bs=-1;
+  for(const k in AVATARS){ const a=AVATARS[k]; const s=a.dims.reduce((t,x)=>t+(d[x]||0),0)/a.dims.length; if(s>bs){bs=s;best=a;} }
+  return best;
+}
+function surpriseContrast(d){
+  if(d.clarity>=7&&d.resilience<=4) return "Although you present as clear and logical, your answers suggest stress sways your final calls more than you'd like to admit.";
+  if(d.selftrust>=7&&d.awareness<=4) return "You move with real confidence — but it may be running a step ahead of how well you actually know your own patterns.";
+  if(d.action>=7&&d.patience<=4) return "You look like a natural doer, yet the slow, long-payoff wins are exactly where you quietly struggle most.";
+  if(d.boundaries<=4&&d.selftrust>=6) return "You trust your own judgment, but you don't always defend the time and energy needed to act on it.";
+  if(d.growth>=7&&d.resilience<=4) return "You learn fast from setbacks — they just seem to cost you more than they really need to.";
+  return null;
+}
+function buildStory(d){
+  const sorted=Object.entries(d).sort((a,b)=>b[1]-a[1]);
+  const top=sorted[0], low=sorted[sorted.length-1]; const L=k=>PARAMS[k].label.toLowerCase();
+  const name=profile.name?profile.name.split(' ')[0]:'You';
+  const parts=[];
+  parts.push(`${name} started this thinking you already knew yourself — and your answers tell a slightly more interesting story.`);
+  const sc=surpriseContrast(d); if(sc) parts.push(sc);
+  parts.push(`Your strongest current is ${L(top[0])}, doing real work for you (often quietly). But ${L(low[0])} keeps showing up as the place things snag.`);
+  if(trickyProfile.driver) parts.push(`Underneath runs a need for ${trickyProfile.driver.replace(/^Being /,'').toLowerCase()} — shaping more of your choices than you'd probably say out loud.`);
+  parts.push(`None of this is fixed. It's the current draft — and the next chapter gets written in small daily moves, not one dramatic one.`);
+  return parts.join(' ');
+}
+function renderAvatarStory(d){
+  const a=buildAvatar(d);
+  document.getElementById('avatar-emblem').textContent=a.emoji;
+  document.getElementById('avatar-name').textContent='Your avatar: '+a.name;
+  document.getElementById('avatar-line').textContent=a.line;
+  document.getElementById('story-text').textContent=buildStory(d);
+}
+
+function buildDNA(d){
+  const code=PARAM_KEYS.map(k=>PARAMS[k].label.slice(0,2).toUpperCase()+d[k]).join(' · ');
+  return {code, dims:PARAM_KEYS.map(k=>({label:PARAMS[k].label,score:d[k],color:PARAMS[k].color}))};
+}
+function renderDNA(d){
+  const dna=buildDNA(d);
+  document.getElementById('dna-code').textContent='PATTERN DNA › '+dna.code;
+  const wrap=document.getElementById('dna-bars'); wrap.innerHTML='';
+  dna.dims.forEach(t=>{
+    const blocks='█'.repeat(t.score)+'░'.repeat(10-t.score);
+    const row=document.createElement('div'); row.className='dna-row';
+    row.innerHTML=`<span class="dna-name">${t.label}</span><span class="dna-blocks" style="color:${t.color}">${blocks}</span>`;
+    wrap.appendChild(row);
+  });
+}
+
+const DOMAINS=[
+ {name:'Career',emoji:'💼',dims:['discipline','clarity','action','growth']},
+ {name:'Relationships',emoji:'💞',dims:['boundaries','awareness','selftrust','resilience']},
+ {name:'Health & Stress',emoji:'🌿',dims:['resilience','patience','boundaries']},
+ {name:'Money',emoji:'💰',dims:['discipline','patience','clarity']},
+ {name:'Learning',emoji:'📈',dims:['growth','awareness','adaptability']},
+ {name:'Leadership',emoji:'🚩',dims:['selftrust','clarity','action','boundaries']}
+];
+function domainPct(d,dom){ return Math.round(dom.dims.reduce((t,k)=>t+d[k],0)/dom.dims.length*10); }
+function domainRead(pct){
+  if(pct>=70) return "Strong footing here — an area you can lead from.";
+  if(pct>=50) return "Solid but uneven — a couple of habits would lift it noticeably.";
+  return "The most friction shows up here right now — worth deliberate attention.";
+}
+function renderDomains(d){
+  const grid=document.getElementById('domain-grid'); grid.innerHTML='';
+  DOMAINS.forEach(dom=>{
+    const pct=domainPct(d,dom); const col=pct>=70?'#22c55e':pct>=50?'#f59e0b':'#ef4444';
+    const card=document.createElement('div'); card.className='domain-card';
+    card.innerHTML=`<div class="domain-head"><span class="domain-name">${dom.emoji} ${dom.name}</span><span class="domain-pct" style="color:${col}">${pct}/100</span></div>
+      <div class="domain-bar"><div class="domain-fill" style="width:${pct}%;background:${col}"></div></div>
+      <div class="domain-read">${domainRead(pct)}</div>`;
+    grid.appendChild(card);
+  });
+}
+
+const COMPETENCIES=[
+ {name:'Problem Solving',dims:['clarity','adaptability','growth']},
+ {name:'Communication',dims:['boundaries','awareness','selftrust']},
+ {name:'Leadership',dims:['selftrust','clarity','action']},
+ {name:'Learning Speed',dims:['growth','adaptability','awareness']},
+ {name:'Analytical Thinking',dims:['clarity','awareness']},
+ {name:'Execution & Reliability',dims:['discipline','action','patience']},
+ {name:'Resilience',dims:['resilience','patience']},
+ {name:'Collaboration',dims:['boundaries','awareness']}
+];
+function renderRecruiter(d){
+  const wrap=document.getElementById('recruiter-bars'); wrap.innerHTML='';
+  COMPETENCIES.forEach(c=>{
+    const pct=Math.round(c.dims.reduce((t,k)=>t+d[k],0)/c.dims.length*10); const gd=gradeFor(pct/10);
+    const row=document.createElement('div'); row.className='dimbar-row';
+    row.innerHTML=`<span class="dimbar-name" style="width:158px">${c.name}</span><span class="dimbar-track"><span class="dimbar-fill" style="background:${gd[1]};color:${gd[1]};width:${pct}%"></span></span><span class="dimbar-val">${pct}/100<span class="dimbar-grade" style="background:${gd[1]}22;color:${gd[1]}">${gd[0]}</span></span>`;
+    wrap.appendChild(row);
+  });
+}
+
+function buildWrapped(d){
+  const sorted=Object.entries(d).sort((a,b)=>b[1]-a[1]);
+  const ins=buildInsights(d,trickyProfile);
+  const learn=ins.find(i=>i.t==='Learning style');
+  const think=learn?learn.x.split('.')[0]:'Balanced';
+  return [
+   {label:'Top strength',value:PARAMS[sorted[0][0]].label,color:PARAMS[sorted[0][0]].color},
+   {label:'Growth focus',value:PARAMS[sorted[sorted.length-1][0]].label,color:PARAMS[sorted[sorted.length-1][0]].color},
+   {label:'Pattern Score',value:(lastPatternScore?lastPatternScore.score+' / 900':'—'),color:'#0a9bba'},
+   {label:'Thinking style',value:think,color:'#a855f7'},
+   {label:'Your avatar',value:buildAvatar(d).name,color:'#f59e0b'}
+  ];
+}
+function renderWrapped(d){
+  const grid=document.getElementById('wrap-grid'); grid.innerHTML='';
+  buildWrapped(d).forEach(w=>{
+    const card=document.createElement('div'); card.className='wrap-card'; card.style.background=w.color;
+    card.innerHTML=`<div class="w-label">${w.label}</div><div class="w-value">${w.value}</div>`;
+    grid.appendChild(card);
+  });
+}
+
+function renderTimeline(){
+  const wrap=document.getElementById('timeline-wrap'); if(!wrap) return;
+  let hist=[]; try{hist=JSON.parse(localStorage.getItem('dyp-history')||'[]');}catch(e){}
+  if(hist.length<2){ wrap.innerHTML='<p class="label-sub" style="margin:8px 0 0">📅 Retake this next week or next month — your Pattern Score timeline will graph itself here.</p>'; return; }
+  const data=hist.slice(-10); const W=620,H=150,pad=34,minV=300,maxV=900;
+  const X=i=>pad+(i/(data.length-1))*(W-pad*2);
+  const Y=v=>H-pad-((Math.max(minV,Math.min(maxV,v))-minV)/(maxV-minV))*(H-pad*2);
+  let line='', dots='';
+  data.forEach((h,i)=>{ const x=X(i),y=Y(h.score); line+=(i?' L':'M')+x.toFixed(0)+' '+y.toFixed(0);
+    dots+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="4" fill="#19D5BF"/><text x="${x.toFixed(0)}" y="${(y-10).toFixed(0)}" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#b8b0a0">${h.score}</text>`; });
+  wrap.innerHTML=`<p class="label-sub" style="margin:10px 0 4px">📈 Your Pattern Score over your last ${data.length} attempts:</p>
+    <svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Your pattern score over time">
+      <line x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}" stroke="#353a4a"/>
+      <path d="${line}" fill="none" stroke="#19D5BF" stroke-width="2.5"/>${dots}</svg>`;
+}
+
+/* ---------- Shareable result card — mandala art (canvas → PNG) ---------- */
+function _drawMandala(x,cx,cy){
+  x.save(); x.lineWidth=2;
+  const layers=[
+    {n:24,len:445,w:28,col:'rgba(4,238,221,0.26)'},
+    {n:18,len:355,w:44,col:'rgba(150,232,240,0.30)'},
+    {n:12,len:258,w:52,col:'rgba(255,255,255,0.28)'},
+    {n:8, len:168,w:42,col:'rgba(4,238,221,0.42)'}
+  ];
+  layers.forEach(L=>{ x.strokeStyle=L.col;
+    for(let i=0;i<L.n;i++){ const a=(i/L.n)*Math.PI*2;
+      x.save(); x.translate(cx,cy); x.rotate(a);
+      x.beginPath(); x.moveTo(0,0);
+      x.quadraticCurveTo(L.w,-L.len*0.5,0,-L.len);
+      x.quadraticCurveTo(-L.w,-L.len*0.5,0,0);
+      x.stroke(); x.restore(); }
+  });
+  [120,200,300,400,492].forEach((r,i)=>{ x.strokeStyle=i%2?'rgba(255,255,255,0.15)':'rgba(4,238,221,0.20)'; x.beginPath(); x.arc(cx,cy,r,0,Math.PI*2); x.stroke(); });
+  x.fillStyle='rgba(255,255,255,0.5)';
+  for(let i=0;i<36;i++){ const a=(i/36)*Math.PI*2,r=462; x.beginPath(); x.arc(cx+r*Math.cos(a),cy+r*Math.sin(a),4,0,Math.PI*2); x.fill(); }
+  x.strokeStyle='rgba(255,255,255,0.38)';
+  for(let i=0;i<16;i++){ const a=(i/16)*Math.PI*2; x.save(); x.translate(cx,cy); x.rotate(a);
+    x.beginPath(); x.moveTo(0,0); x.quadraticCurveTo(20,-55,0,-112); x.quadraticCurveTo(-20,-55,0,0); x.stroke(); x.restore(); }
+  x.restore();
+}
+function generateShareCard(){
+  const ps=lastPatternScore, d=lastDimScores||{}, rep=lastReport||{};
+  const st=document.getElementById('pdf-status');
+  if(!ps){ if(st){st.style.color='#e07a5a';st.textContent='Finish the assessment first to get your card.';} return; }
+  const c=document.getElementById('share-canvas'); const S=1080; const x=c.getContext('2d'); const cx=S/2, cy=S/2;
+  const rg=x.createRadialGradient(cx,cy,60,cx,cy,S*0.72);
+  rg.addColorStop(0,'#0b3a56'); rg.addColorStop(1,'#04182c');
+  x.fillStyle=rg; x.fillRect(0,0,S,S);
+  _drawMandala(x,cx,cy);
+  // scrims for text legibility
+  x.fillStyle='rgba(4,16,30,0.52)'; x.fillRect(0,0,S,196); x.fillRect(0,S-252,S,252);
+  x.fillStyle='rgba(4,16,30,0.55)';
+  x.beginPath(); x.arc(cx,cy,234,0,Math.PI*2); x.fill();
+  x.strokeStyle='rgba(4,238,221,0.65)'; x.lineWidth=3;
+  x.beginPath(); x.arc(cx,cy,234,0,Math.PI*2); x.stroke();
+  const sorted=Object.entries(d).sort((a,b)=>b[1]-a[1]);
+  const topDim=sorted.length?PARAMS[sorted[0][0]].label:'—';
+  const center=(t,y,font,color)=>{ x.font=font; x.fillStyle=color; x.textAlign='center'; x.fillText(t,cx,y); };
+  center('DECODE YOUR PATTERN',90,'700 36px Inter, sans-serif','rgba(255,255,255,.9)');
+  center(((profile.name||'My').toUpperCase())+(profile.name?"'S MANDALA":' MANDALA'),144,'600 28px Inter, sans-serif','#04EEDD');
+  center('PATTERN SCORE',cy-116,'600 24px Inter, sans-serif','rgba(255,255,255,.65)');
+  center(String(ps.score),cy+40,'800 150px Inter, sans-serif','#ffffff');
+  center('/ 900  ·  '+ps.band.label.toUpperCase(),cy+108,'700 30px Inter, sans-serif',ps.band.color);
+  const be=(lastBadges||[]).slice(0,6).map(b=>b.emoji).join('  ');
+  if(be) center(be,S-204,'40px Inter, sans-serif','#ffffff');
+  center('TOP STRENGTH  ·  '+topDim,S-150,'700 34px Inter, sans-serif','#04EEDD');
+  if(rep.archetypeName) center(rep.archetypeName,S-104,'italic 600 30px Georgia, serif','rgba(255,255,255,.95)');
+  center('antarabarman.github.io/Project1   ·   by Antara Barman',S-54,'600 23px Inter, sans-serif','rgba(255,255,255,.78)');
+  try{
+    const url=c.toDataURL('image/png');
+    const a=document.createElement('a'); a.href=url;
+    a.download=(profile.name?profile.name.trim().replace(/\s+/g,'-')+'-':'')+'pattern-mandala-card.png';
+    document.body.appendChild(a); a.click(); a.remove();
+    if(st){st.style.color='';st.textContent='Saved your mandala card to downloads — post it on LinkedIn or WhatsApp! 📸';}
+  }catch(e){ if(st){st.style.color='#e07a5a';st.textContent='Could not build the card in this browser — try the PDF instead.';} }
 }
 
 function restartGame(){ show('intro'); }

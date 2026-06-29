@@ -1,59 +1,130 @@
-# 🎮 Decode Your Pattern, Like a Game
+<div align="center">
 
-An interactive, colourful take on the essay **"Life Is a Game: 14 Rules Nobody Handed You at Birth."**
-Read the 14 rules as levels you unlock one by one — then play the game on yourself with a **58-question**
-self-assessment that scores 10 dimensions of how you live, generates a **credit-score-style Pattern Score
-(300–900)**, colourful charts, an honest point-by-point read, real-life scenarios, and a personal action plan.
+# 🧠 Decode Your Pattern
+### A Personal Intelligence Platform for Self-Reflection and Growth
 
-> *"I created life not to punish you, but to challenge you. Every challenge hides a lesson, every lesson hides
-> growth, and every choice shapes the person you become."*
+*Turn a few honest answers into a personalised, explainable map of how you actually operate — then track it over time.*
 
-Created by **Antara Barman**.
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Play%20Now-04EEDD?style=for-the-badge)](https://antarabarman.github.io/Project1/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-3b82f6?style=for-the-badge)](LICENSE)
+[![Made with](https://img.shields.io/badge/Built%20with-HTML%20%C2%B7%20Canvas%20%C2%B7%20SVG-a855f7?style=for-the-badge)](#tech)
+[![Cost](https://img.shields.io/badge/Hosting-%240%20forever-22c55e?style=for-the-badge)](docs/DEPLOYMENT.md)
 
-## ✨ What's inside
+[**▶ Try the live demo**](https://antarabarman.github.io/Project1/) · [Architecture](docs/ARCHITECTURE.md) · [Case study](docs/CASE_STUDY.md) · [Explainability](docs/EXPLAINABILITY.md) · [Roadmap](ROADMAP.md)
 
-| File | What it is |
-|------|------------|
-| `index.html` | The interactive, colourful **article** — 14 rules as unlockable levels with an XP bar and confetti finale. Start here. |
-| `decode-your-pattern_6.html` | The full **58-question assessment**: Pattern Score gauge, radar + bar charts, point-wise Pattern Notice, scenarios, sticky-note reflections, an animated brain, focus music, and PDF/email export. |
-| `slides/` | 17 ready-to-post **LinkedIn carousel images** (1080×1080): cover → 14 rules → final truth → CTA. |
-| `LINKEDIN_POST.md` | Copy-paste **caption + hashtags** for the post. |
-| `article.docx` | The full written article (14 rules). |
-| `SETUP_GITHUB.md` | Step-by-step publishing + optional email setup. |
-
-> The folder `carousel/` is an **older 12-rule version** kept only because cloud sync locked it — delete it and use `slides/`.
-
-## 🚀 The 14 rules
-
-1. Life Is a Puzzle, Not a Straight Road
-2. Time Never Stops Billing You
-3. Complexity Is the Default Setting
-4. Doing Nothing Is Still a Decision
-5. There's No Universal Strategy
-6. Study Yourself Like a Scientist
-7. Borrow Lessons, Don't Buy Each in Pain
-8. Comfort Is a Silent Thief
-9. Rest Is Not the Same as Comfort
-10. Growth Must Be Deliberate, Not Forced by Pain
-11. Build Systems, Not Motivation
-12. Problems Are Feedback, Not Punishment
-13. Your Future Is Built Today, in Invisible Increments
-14. Close the Loop
-
-## 🧠 What the assessment measures
-
-10 dimensions — Awareness, Action, Discipline, Resilience, Adaptability, Self-trust, Boundaries, Patience,
-Clarity, Growth — combined into a single **Pattern Score** with honest score bands, plus a per-dimension grade.
-
-## 🕹️ Run it locally
-
-Open `index.html` in any browser — single self-contained file, no build step, no dependencies, no tracking.
-The assessment uses a few well-known CDN libraries (for PDF export and optional email) loaded at runtime.
-
-## 🌐 Live demo
-
-Published with GitHub Pages → `https://<your-username>.github.io/<repo>/`
+</div>
 
 ---
 
-© Antara Barman. Made for sharing — feedback welcome.
+> ⚠️ **Not a clinical or scientific assessment.** Decode Your Pattern does **not** diagnose personality or
+> mental health. Every insight is an *observation derived from your own responses*, offered to encourage
+> self-reflection and personal growth — never a fact or a verdict. See [Explainability](docs/EXPLAINABILITY.md).
+
+## ✨ What it does
+
+You answer a set of questions — practical, logical, philosophical, and psychological, plus your real likes,
+triggers, and fears — drawn **fresh at random each time**. From *your answers alone*, the platform generates a
+report that is unique to you:
+
+| | Feature | Why it matters |
+|---|---|---|
+| 📊 | **Pattern Score (300–900)** | A single, credit-score-style read of your behavioural history, with honest bands. |
+| 🧭 | **10-dimension radar + graded bars** | See where you're strong and where you're stretched, at a glance. |
+| 🧠 | **Style insights** | Decision-making, communication, stress, and learning styles — plus hidden potential & blind spots. |
+| 🧬 | **Pattern DNA** | A branded signature of all 10 traits — nobody else's reads the same. |
+| 🌐 | **Life domains** | The same patterns projected onto Career, Relationships, Health, Money, Learning, Leadership. |
+| 💼 | **Recruiter mode** | A professional-competency view — screenshot-ready for a CV or portfolio. |
+| 🏅 | **Badges + progress timeline** | Earn badges, then track your Pattern Score across months. |
+| ⚠️ | **Scenarios** | Real situations where your weak spots bite — and the move that breaks the loop. |
+| 🧰 | **Growth toolkit** | Book, talk, podcast, daily habit, meditation, and app — matched to your weakest areas. |
+| 🎁 | **Mind Wrapped + mandala share card** | A Spotify-Wrapped-style summary and a downloadable image to share. |
+| 🪞 | **Explainability** | Insights are framed as tendencies, never facts — with the *why* behind them. |
+
+Plus: an interactive **14-rule "Life Is a Game" essay**, generative **focus music**, and **PDF export** — all running
+entirely in the browser. No sign-up. No tracking. No data leaves the device.
+
+## 🚀 Quickstart
+
+```bash
+# 1. Clone
+git clone https://github.com/AntaraBarman/Project1.git
+cd Project1
+
+# 2. Open in a browser — that's it. No build step, no dependencies.
+#    macOS:  open index.html
+#    Linux:  xdg-open index.html
+#    Windows: start index.html
+```
+
+Or just **[open the live demo](https://antarabarman.github.io/Project1/)**.
+
+## 🗂️ Repository structure
+
+```
+.
+├── index.html                  # Interactive "Life Is a Game" article (14 rules)
+├── decode-your-pattern_6.html  # The assessment + report engine (single-file app)
+├── slides/                     # LinkedIn launch carousel (1080×1080)
+├── article.docx                # Source essay
+├── LinkedIn-Article.md         # Long-form launch post
+├── docs/                       # Architecture, case study, API, schema, deployment
+│   ├── ARCHITECTURE.md
+│   ├── CASE_STUDY.md
+│   ├── EXPLAINABILITY.md
+│   ├── DATA_MODEL.md
+│   ├── API.md
+│   └── DEPLOYMENT.md
+├── .github/workflows/ci.yml    # Lint + HTML validation on every push
+├── CONTRIBUTING.md · SECURITY.md · CHANGELOG.md · ROADMAP.md · LICENSE
+```
+
+## <a name="tech"></a>🛠️ Tech & architecture
+
+**Today (v1 — live, $0, zero-setup):** a dependency-light, single-file web app. Vanilla JS, inline SVG charts,
+the Canvas API for the share card, the Web Audio API for generative music, `localStorage` for private
+on-device history. The **Behavioral Intelligence Engine** is a modular, explainable, rule-based system —
+deliberately designed so it can later be swapped for an ML/LLM service behind the same interface.
+
+**Next (v2 — full-stack, free-tier):** React + TypeScript + Tailwind frontend, FastAPI backend, Postgres/SQLite,
+OAuth + guest mode, an LLM-powered AI Coach, and an anonymous analytics dashboard. See
+**[ARCHITECTURE.md](docs/ARCHITECTURE.md)** and **[ROADMAP.md](ROADMAP.md)**.
+
+```mermaid
+flowchart LR
+  U[User] --> A[Quiz Engine]
+  A --> B[Behavioral Intelligence Engine<br/>explainable, rule-based]
+  B --> R[Personalised Report]
+  R --> V[Visualisations<br/>radar · bars · gauge · DNA]
+  R --> X[Explainability layer<br/>why was this suggested?]
+  R --> S[Share card · PDF · Mind Wrapped]
+  R -.-> H[(localStorage history)]
+  H --> T[Progress timeline]
+```
+
+## 🔒 Privacy by design
+
+v1 sends **nothing** to any server — the entire assessment, scoring, and report run locally, and history is
+stored only in your browser's `localStorage`. The planned v2 analytics are **aggregate and anonymous only**
+(see [SECURITY.md](SECURITY.md) and [Case study → Privacy](docs/CASE_STUDY.md)).
+
+## 🗺️ Roadmap & docs
+
+- **[Architecture](docs/ARCHITECTURE.md)** — system design, diagrams, the v2 full-stack plan
+- **[Case study](docs/CASE_STUDY.md)** — problem, product decisions, trade-offs, lessons learned
+- **[Explainability](docs/EXPLAINABILITY.md)** — how insights are generated and framed responsibly
+- **[Data model](docs/DATA_MODEL.md)** — current schema + planned database ERD
+- **[API spec](docs/API.md)** — the v2 FastAPI contract
+- **[Deployment](docs/DEPLOYMENT.md)** — how to ship v1 (Pages) and v2 (free tiers) at $0
+- **[Roadmap](ROADMAP.md)** · **[Changelog](CHANGELOG.md)** · **[Contributing](CONTRIBUTING.md)**
+
+## 🤝 Contributing
+
+Contributions, ideas, and issues are welcome — see **[CONTRIBUTING.md](CONTRIBUTING.md)**.
+
+## 📄 License
+
+[MIT](LICENSE) © 2026 **Antara Barman** — free to use, learn from, and build on.
+
+<div align="center">
+<sub>Built as an open, educational portfolio project. An honest mirror, not a horoscope.</sub>
+</div>

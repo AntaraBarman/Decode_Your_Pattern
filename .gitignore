@@ -1,0 +1,37 @@
+# ---- OS / editor ----
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ---- working / preview artifacts (not part of the product) ----
+mandala-preview.png
+carousel/
+carousel_v2/
+*.local
+
+# ---- Node (Phase B frontend) ----
+node_modules/
+dist/
+build/
+.vite/
+coverage/
+*.log
+npm-debug.log*
+
+# ---- Python (Phase B backend) ----
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+
+# ---- Docker / build ----
+*.pid
