@@ -37,10 +37,10 @@ report that is unique to you:
 | 🏅 | **Badges + progress timeline** | Earn badges, then track your Pattern Score across months. |
 | ⚠️ | **Scenarios** | Real situations where your weak spots bite — and the move that breaks the loop. |
 | 🧰 | **Growth toolkit** | Book, talk, podcast, daily habit, meditation, and app — matched to your weakest areas. |
-| 🎁 | **Mind Wrapped + mandala share card** | A Spotify-Wrapped-style summary and a downloadable image to share. |
+| 🎁 | **Mind Wrapped + share card** | A Spotify-Wrapped-style summary and a colourful downloadable image to share. |
 | 🪞 | **Explainability** | Insights are framed as tendencies, never facts — with the *why* behind them. |
 
-Plus: an interactive **14-rule "Life Is a Game" essay**, generative **focus music**, and **PDF export** — all running
+Plus: a clean landing page, generative **focus music**, and **PDF export** — all running
 entirely in the browser. No sign-up. No tracking. No data leaves the device.
 
 ## 🚀 Quickstart
@@ -62,7 +62,7 @@ Or just **[open the live demo](https://antarabarman.github.io/Project1/)**.
 
 ```
 .
-├── index.html                  # Interactive "Life Is a Game" article (14 rules)
+├── index.html                  # Entry point — redirects straight into the assessment
 ├── decode-your-pattern_6.html  # The assessment + report engine (single-file app)
 ├── slides/                     # LinkedIn launch carousel (1080×1080)
 ├── article.docx                # Source essay

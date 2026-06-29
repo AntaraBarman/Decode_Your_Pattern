@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Decode your pattern — the full assessment</title>
-<meta name="description" content="A randomized self-assessment based on the rules of Life is a Game — 47 questions drawn fresh from a larger pool each time, scoring 10 dimensions of how you play, generating a credit-score-style Pattern Score, colourful charts, an honest point-by-point read, scenarios, and a personal action plan.">
+<meta name="description" content="Decode Your Pattern — a free, personalised self-reflection assessment. A fresh mix of questions each time, scored across 10 dimensions into a credit-score-style Pattern Score, with colourful charts, an honest read, scenarios, and a personal action plan. Runs in your browser.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -467,13 +467,6 @@
   .tool-body b{color:#fbf8ef}
   .tool-body a{color:var(--gold);text-decoration:none} .tool-body a:hover{text-decoration:underline}
 
-  /* PDF light-theme additions */
-  #pdf-capture-area .insight-card{background:#fbfbf8 !important;border:1px solid #e4ddd0 !important}
-  #pdf-capture-area .insight-card .ic-title,#pdf-capture-area .insight-card p,#pdf-capture-area .badge .b-name,
-  #pdf-capture-area .progress-note,#pdf-capture-area .tool-body,#pdf-capture-area .tool-body b{color:#1c1812 !important}
-  #pdf-capture-area .tool-item{background:#fbfbf8 !important}
-  #pdf-capture-area .tool-body a{color:#0E7A6E !important}
-
   /* ===== Phase 2: avatar, story, DNA, domains, recruiter, wrapped, timeline ===== */
   .avatar-wrap{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
   .avatar-emblem{width:84px;height:84px;border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:44px;background:linear-gradient(135deg,#0a3550,#0e7490);border:2px solid var(--gold-deep);flex-shrink:0}
@@ -497,9 +490,6 @@
   .wrap-card .w-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.9;font-weight:700}
   .wrap-card .w-value{font-family:'Fraunces',serif;font-size:18px;margin-top:6px;line-height:1.25;font-weight:700}
   .timeline-wrap{margin-top:14px}
-  #pdf-capture-area .avatar-name,#pdf-capture-area .story-text,#pdf-capture-area .domain-name,#pdf-capture-area .dna-name{color:#1c1812 !important}
-  #pdf-capture-area .domain-read,#pdf-capture-area .avatar-line{color:#4a4332 !important}
-  #pdf-capture-area .domain-card{background:#fbfbf8 !important}
 
   /* email controls */
   .deliver-grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
@@ -558,12 +548,12 @@
 <div class="wrap">
 
   <div id="intro" class="screen active">
-    <p class="eyebrow">Based on the rules of life is a game</p>
+    <p class="eyebrow">A personal pattern assessment</p>
     <h1>Decode your pattern</h1>
-    <p class="lede">5 quick questions about you, then <span id="intro-qcount">47</span> questions — practical, logical, philosophical and psychological, plus your real likes, dislikes and triggers — <b>drawn fresh at random each time, so no two playthroughs are the same.</b> Scored across 10 dimensions and turned into a Pattern Score (like a credit score for how you live), colourful charts, an honest point-by-point read, and a personal action plan.</p>
+    <p class="lede">A few quick questions about you, then a thoughtfully mixed set — practical, logical, philosophical and psychological, plus your real likes, dislikes and triggers — <b>drawn fresh at random each time, so no two playthroughs are the same.</b> Scored across 10 dimensions and turned into a Pattern Score (like a credit score for how you live), colourful charts, an honest read, and a personal action plan.</p>
     <p class="creator-credit">Created by Antara Barman</p>
     <div class="dim-pills" id="dim-pills"></div>
-    <button class="btn-primary" onclick="showIntake()">▶ Start the game</button>
+    <button class="btn-primary" onclick="showIntake()">Decode my pattern →</button>
     <p class="source-note">Takes about 15–18 minutes in total. Everything runs in your browser — nothing is sent anywhere or stored outside this page. This is a reflective tool for self-insight, not a clinical or scientifically validated psychological assessment, and it shouldn't be read as a fixed diagnosis of who you are.</p>
   </div>
 
@@ -689,14 +679,6 @@
       </div>
     </div>
 
-    <div class="section-card accent-charts">
-      <div class="avatar-wrap">
-        <div class="avatar-emblem" id="avatar-emblem"></div>
-        <div><div class="avatar-name" id="avatar-name"></div><div class="avatar-line" id="avatar-line"></div></div>
-      </div>
-      <p class="story-text" id="story-text" style="margin-top:14px"></p>
-    </div>
-
     <div class="section-card accent-score">
       <p class="label-xl">Your Pattern Score</p>
       <p class="label-sub">Like a credit score reads your financial history, this reads your behavioural history — a single 300–900 number built from all your answers. It's blunt on purpose.</p>
@@ -718,34 +700,12 @@
       </div>
     </div>
 
-    <div class="section-card accent-charts">
-      <p class="label-xl">🧬 Your Pattern DNA</p>
-      <p class="label-sub">Your unique signature across all 10 traits — nobody else's reads exactly like this.</p>
-      <div class="dna-code" id="dna-code"></div>
-      <div id="dna-bars"></div>
-    </div>
-
     <div class="section-card accent-score">
       <p class="label-xl">🏅 Badges you earned</p>
       <p class="label-sub">Unlocked from the shape of your answers. Locked ones show what you're closest to next.</p>
       <div class="badge-row" id="badge-row"></div>
       <div class="progress-note" id="progress-note" style="display:none"></div>
       <div class="timeline-wrap" id="timeline-wrap"></div>
-    </div>
-
-    <div class="section-card accent-nature">
-      <p class="label">Your nature</p>
-      <p id="narrative-nature"></p>
-    </div>
-
-    <div class="section-card accent-context" id="personal-context-box">
-      <p class="label">What you told us</p>
-      <p id="narrative-personal"></p>
-    </div>
-
-    <div class="section-card accent-pattern">
-      <p class="label">Patterns noticed</p>
-      <p id="narrative-pattern"></p>
     </div>
 
     <div class="section-card accent-notice">
@@ -760,62 +720,16 @@
       <div class="insight-grid" id="insight-grid"></div>
     </div>
 
-    <div class="section-card accent-notice">
-      <p class="label-xl">🌐 Your life domains</p>
-      <p class="label-sub">The same patterns, projected onto the areas of life they actually play out in.</p>
-      <div class="domain-grid" id="domain-grid"></div>
-    </div>
-
-    <div class="section-card accent-triggers">
-      <p class="label-xl">💼 Recruiter mode — professional profile</p>
-      <p class="label-sub">The same data, reframed as workplace competencies. Screenshot-ready for a CV or portfolio.</p>
-      <div id="recruiter-bars"></div>
-    </div>
-
     <div class="section-card accent-scenario">
       <p class="label-xl">Where this will bite you</p>
       <p class="label-sub">Two real situations your weakest dimensions tend to show up in — and the move that breaks the loop.</p>
       <div id="scenario-list"></div>
     </div>
 
-    <div class="strength-grid">
-      <div class="section-card accent-strength strength-card">
-        <p class="label">Your 5 strengths</p>
-        <div id="strengths-list"></div>
-      </div>
-      <div class="section-card accent-improve improve-card">
-        <p class="label">5 areas to work on</p>
-        <div id="improvements-list"></div>
-      </div>
-    </div>
-
-    <div class="section-card accent-books">
-      <p class="label">Worth reading</p>
-      <div id="book-list"></div>
-    </div>
-
     <div class="section-card accent-books">
       <p class="label-xl">🧰 Your growth toolkit</p>
       <p class="label-sub">Hand-picked for your two weakest dimensions — beyond books: a podcast, a talk, a daily habit, a meditation, and an app.</p>
       <div class="toolkit-grid" id="toolkit-grid"></div>
-    </div>
-
-    <div class="section-card accent-brain">
-      <p class="label">A note on your brain</p>
-      <div class="brainwrap" id="brain-anim"></div>
-      <div id="brain-tips-list"></div>
-    </div>
-
-    <div class="section-card accent-watch no-print">
-      <p class="label">Worth watching or listening to</p>
-      <div id="watch-list"></div>
-      <p class="watch-note">Each link goes to one specific video, verified to be live and on-topic at the time this was built.</p>
-    </div>
-
-    <div class="section-card accent-quote">
-      <p class="label">Your quote</p>
-      <blockquote id="personal-quote-text" class="personal-quote"></blockquote>
-      <p id="personal-quote-author" class="personal-quote-author"></p>
     </div>
 
     <div class="section-card accent-plan">
@@ -832,18 +746,6 @@
         <p class="plan-period">This year</p>
         <div id="plan-year"></div>
       </div>
-    </div>
-
-    <div class="section-card accent-triggers">
-      <p class="label-xl">Triggers &amp; tells</p>
-      <p class="label-sub">What you said sets you off, what quietly drives you, and how that interacts with your scores.</p>
-      <div id="triggers-body"></div>
-    </div>
-
-    <div class="section-card accent-score">
-      <p class="label-xl">🎁 Your Pattern, Wrapped</p>
-      <p class="label-sub">The headline version — made to screenshot and share.</p>
-      <div class="wrap-grid" id="wrap-grid"></div>
     </div>
 
     <p class="disclaimer">This analysis is generated from patterns in your answers, not a clinical assessment. It's meant as a mirror for reflection, not a fixed label — you know yourself better than any quiz can.</p>
@@ -1806,89 +1708,6 @@ function computeAndShowResult(){
   document.getElementById('tier-card-bottom').style.background = `${bottomColor}22`;
   document.getElementById('tier-card-bottom').style.borderColor = `${bottomColor}55`;
 
-  document.getElementById('narrative-nature').textContent = buildNature(dimScores);
-  document.getElementById('narrative-personal').textContent = buildPersonalContext(personalAnswers);
-  document.getElementById('narrative-pattern').textContent = buildPattern(dimScores);
-
-  const sai = buildStrengthsAndImprovements(dimScores);
-  const strengthsList = document.getElementById('strengths-list');
-  strengthsList.innerHTML = '';
-  sai.strengths.forEach(s => {
-    const color = PARAMS[s.dim].color;
-    const item = document.createElement('div');
-    item.className = 'point-item';
-    item.innerHTML = `<span class="point-dot" style="background:${color}"></span><span class="point-text"><span class="dim-chip" style="background:${color}22; color:${color};">${s.label}</span><br>${s.text}</span>`;
-    strengthsList.appendChild(item);
-  });
-  const improvementsList = document.getElementById('improvements-list');
-  improvementsList.innerHTML = '';
-  sai.improvements.forEach(s => {
-    const color = PARAMS[s.dim].color;
-    const item = document.createElement('div');
-    item.className = 'point-item';
-    item.innerHTML = `<span class="point-dot" style="background:${color}"></span><span class="point-text"><span class="dim-chip" style="background:${color}22; color:${color};">${s.label}</span><br>${s.text}</span>`;
-    improvementsList.appendChild(item);
-  });
-
-  const bookList = document.getElementById('book-list');
-  bookList.innerHTML = '';
-  buildBookRecs(dimScores).forEach(b => {
-    const color = PARAMS[b.dim].color;
-    const item = document.createElement('div');
-    item.className = 'book-item';
-    item.innerHTML = `
-      <span class="book-spine" style="background:${color}"></span>
-      <div class="book-meta">
-        <span class="dim-chip" style="background:${color}22; color:${color};">${PARAMS[b.dim].label}</span>
-        <p class="book-title">${b.title}</p>
-        <p class="book-author">${b.author}</p>
-        <p class="book-why">${b.why}</p>
-      </div>`;
-    bookList.appendChild(item);
-  });
-
-  const brainTipsList = document.getElementById('brain-tips-list');
-  brainTipsList.innerHTML = '';
-  const brainDims = (() => {
-    const sorted2 = Object.entries(dimScores).sort((a,b)=>a[1]-b[1]);
-    return sorted2.slice(0,2).map(([k])=>k);
-  })();
-  buildBrainTips(dimScores).forEach((tip, i) => {
-    const color = PARAMS[brainDims[i]].color;
-    const item = document.createElement('div');
-    item.className = 'brain-tip-item';
-    item.innerHTML = `<span class="dim-chip" style="background:${color}22; color:${color};">${PARAMS[brainDims[i]].label}</span><p class="brain-tip-title">${tip.title}</p><p class="brain-tip-text">${tip.text}</p>`;
-    brainTipsList.appendChild(item);
-  });
-  if (personalAnswers.support) {
-    const recoveryNote = document.createElement('div');
-    recoveryNote.className = 'brain-tip-item';
-    recoveryNote.innerHTML = `<p class="brain-tip-title">What you said helps you recover</p><p class="brain-tip-text">You named "${personalAnswers.support.toLowerCase()}" as what actually helps when you're worn out — worth protecting deliberately, since recovery methods that work tend to get crowded out first when things get busy.</p>`;
-    brainTipsList.appendChild(recoveryNote);
-  }
-
-  const watchList = document.getElementById('watch-list');
-  watchList.innerHTML = '';
-  buildWatchRecs(dimScores).forEach(w => {
-    const color = PARAMS[w.dim].color;
-    const item = document.createElement('div');
-    item.className = 'watch-item';
-    item.innerHTML = `
-      <span class="watch-icon" style="background:${color}22; color:${color};">▶</span>
-      <div class="watch-meta">
-        <span class="dim-chip" style="background:${color}22; color:${color};">${PARAMS[w.dim].label}</span>
-        <p class="watch-title">${w.title}</p>
-        <p class="watch-channel">${w.channel} — for ${PARAMS[w.dim].label.toLowerCase()}</p>
-        <p class="watch-why">${w.why}</p>
-        <a class="watch-link" href="${w.url}" target="_blank" rel="noopener">Watch on YouTube ↗</a>
-      </div>`;
-    watchList.appendChild(item);
-  });
-
-  const quote = buildPersonalQuote(dimScores);
-  document.getElementById('personal-quote-text').textContent = `"${quote.text}"`;
-  document.getElementById('personal-quote-author').textContent = `— ${quote.author}`;
-
   const plan = buildActionPlan(dimScores, personalAnswers);
   const fillPlan = (elId, items) => {
     const el = document.getElementById(elId);
@@ -1960,6 +1779,13 @@ async function downloadPdf(){
     #pdf-capture-area .honesty, #pdf-capture-area .scenario h4 { color:#1c1812 !important; }
     #pdf-capture-area .honesty b { color:#9a6a00 !important; }
     #pdf-capture-area .disclaimer b { color:#1c1812 !important; }
+    #pdf-capture-area .insight-card { background:#fbfbf8 !important; border:1px solid #e4ddd0 !important; }
+    #pdf-capture-area .insight-card .ic-title, #pdf-capture-area .insight-card p, #pdf-capture-area .badge .b-name,
+    #pdf-capture-area .progress-note, #pdf-capture-area .tool-body, #pdf-capture-area .tool-body b,
+    #pdf-capture-area .avatar-name, #pdf-capture-area .story-text, #pdf-capture-area .domain-name, #pdf-capture-area .dna-name { color:#1c1812 !important; }
+    #pdf-capture-area .domain-read, #pdf-capture-area .avatar-line { color:#4a4332 !important; }
+    #pdf-capture-area .tool-item, #pdf-capture-area .domain-card { background:#fbfbf8 !important; }
+    #pdf-capture-area .tool-body a { color:#0E7A6E !important; }
   `;
   document.head.appendChild(styleOverride);
   // Give the browser one frame to apply the animation-freeze rules above before any
@@ -2159,18 +1985,18 @@ function buildRadarSVG(dimScores){
   const cx=150, cy=150, R=110; const keys=PARAM_KEYS; const n=keys.length;
   const ang=i=> (-90 + i*(360/n))*Math.PI/180;
   let rings=''; [0.25,0.5,0.75,1].forEach(f=>{ let p=keys.map((_,i)=>(cx+R*f*Math.cos(ang(i))).toFixed(1)+','+(cy+R*f*Math.sin(ang(i))).toFixed(1)).join(' ');
-    rings+=`<polygon points="${p}" fill="none" stroke="#3a3f4c" stroke-width="1" opacity="0.5"/>`; });
+    rings+=`<polygon points="${p}" fill="none" stroke="#5d6478" stroke-width="1.2" opacity="0.75"/>`; });
   let axes='', labels='', poly='';
   const pts=[];
   keys.forEach((k,i)=>{ const f=Math.max(0.04,dimScores[k]/10); const x=cx+R*f*Math.cos(ang(i)), y=cy+R*f*Math.sin(ang(i));
     pts.push(x.toFixed(1)+','+y.toFixed(1));
-    axes+=`<line x1="${cx}" y1="${cy}" x2="${(cx+R*Math.cos(ang(i))).toFixed(1)}" y2="${(cy+R*Math.sin(ang(i))).toFixed(1)}" stroke="#3a3f4c" stroke-width="1" opacity="0.4"/>`;
+    axes+=`<line x1="${cx}" y1="${cy}" x2="${(cx+R*Math.cos(ang(i))).toFixed(1)}" y2="${(cy+R*Math.sin(ang(i))).toFixed(1)}" stroke="#5d6478" stroke-width="1" opacity="0.55"/>`;
     const lx=cx+(R+16)*Math.cos(ang(i)), ly=cy+(R+16)*Math.sin(ang(i));
     labels+=`<circle cx="${(cx+R*f*Math.cos(ang(i))).toFixed(1)}" cy="${(cy+R*f*Math.sin(ang(i))).toFixed(1)}" r="3" fill="${PARAMS[k].color}"/>`+
             `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" text-anchor="middle" dominant-baseline="middle" font-family="Inter,sans-serif" font-size="9.5" font-weight="600" fill="${PARAMS[k].color}">${PARAMS[k].label}</text>`;
   });
-  poly=`<polygon points="${pts.join(' ')}" fill="rgba(25,213,191,0.18)" stroke="#19D5BF" stroke-width="2"/>`;
-  return `<svg viewBox="0 0 300 300" width="260" role="img" aria-label="Radar chart of your 10 dimensions">${rings}${axes}${poly}${labels}</svg>`;
+  poly=`<polygon points="${pts.join(' ')}" fill="rgba(25,213,191,0.32)" stroke="#2bf0da" stroke-width="3" stroke-linejoin="round"/>`;
+  return `<svg viewBox="0 0 300 300" width="290" role="img" aria-label="Radar chart of your 10 dimensions">${rings}${axes}${poly}${labels}</svg>`;
 }
 function buildDimBars(dimScores){
   const sorted=Object.entries(dimScores).sort((a,b)=>b[1]-a[1]);
@@ -2325,20 +2151,10 @@ function renderV2(dimScores, overall){
     d.innerHTML=`<h4><span class="sc-tag" style="background:${c}22;color:${c}">${PARAMS[sc.dim].label}</span> ${sc.s}</h4>
       <p class="sc-line"><b>The likely move:</b> ${sc.bad}</p>
       <p class="sc-line sc-better"><b>The better move:</b> ${sc.good}</p>`; sl.appendChild(d); });
-  // brain animation
-  document.getElementById('brain-anim').innerHTML=brainSVG();
-  // triggers
-  document.getElementById('triggers-body').innerHTML=buildTriggers(dimScores);
   // Phase 1 premium upgrades
   renderInsights(dimScores);
   renderBadgesProgress(dimScores);
   renderToolkit(dimScores);
-  // Phase 2 features
-  renderAvatarStory(dimScores);
-  renderDNA(dimScores);
-  renderDomains(dimScores);
-  renderRecruiter(dimScores);
-  renderWrapped(dimScores);
   renderTimeline();
 }
 
@@ -2692,65 +2508,63 @@ function renderTimeline(){
       <path d="${line}" fill="none" stroke="#19D5BF" stroke-width="2.5"/>${dots}</svg>`;
 }
 
-/* ---------- Shareable result card — mandala art (canvas → PNG) ---------- */
-function _drawMandala(x,cx,cy){
-  x.save(); x.lineWidth=2;
-  const layers=[
-    {n:24,len:445,w:28,col:'rgba(4,238,221,0.26)'},
-    {n:18,len:355,w:44,col:'rgba(150,232,240,0.30)'},
-    {n:12,len:258,w:52,col:'rgba(255,255,255,0.28)'},
-    {n:8, len:168,w:42,col:'rgba(4,238,221,0.42)'}
-  ];
-  layers.forEach(L=>{ x.strokeStyle=L.col;
-    for(let i=0;i<L.n;i++){ const a=(i/L.n)*Math.PI*2;
-      x.save(); x.translate(cx,cy); x.rotate(a);
-      x.beginPath(); x.moveTo(0,0);
-      x.quadraticCurveTo(L.w,-L.len*0.5,0,-L.len);
-      x.quadraticCurveTo(-L.w,-L.len*0.5,0,0);
-      x.stroke(); x.restore(); }
-  });
-  [120,200,300,400,492].forEach((r,i)=>{ x.strokeStyle=i%2?'rgba(255,255,255,0.15)':'rgba(4,238,221,0.20)'; x.beginPath(); x.arc(cx,cy,r,0,Math.PI*2); x.stroke(); });
-  x.fillStyle='rgba(255,255,255,0.5)';
-  for(let i=0;i<36;i++){ const a=(i/36)*Math.PI*2,r=462; x.beginPath(); x.arc(cx+r*Math.cos(a),cy+r*Math.sin(a),4,0,Math.PI*2); x.fill(); }
-  x.strokeStyle='rgba(255,255,255,0.38)';
-  for(let i=0;i<16;i++){ const a=(i/16)*Math.PI*2; x.save(); x.translate(cx,cy); x.rotate(a);
-    x.beginPath(); x.moveTo(0,0); x.quadraticCurveTo(20,-55,0,-112); x.quadraticCurveTo(-20,-55,0,0); x.stroke(); x.restore(); }
-  x.restore();
-}
+/* ---------- Shareable result card (colourful, canvas → PNG) ---------- */
+function _rr(x,rx,ry,w,h,r){ x.beginPath(); x.moveTo(rx+r,ry); x.arcTo(rx+w,ry,rx+w,ry+h,r); x.arcTo(rx+w,ry+h,rx,ry+h,r); x.arcTo(rx,ry+h,rx,ry,r); x.arcTo(rx,ry,rx+w,ry,r); x.closePath(); }
 function generateShareCard(){
   const ps=lastPatternScore, d=lastDimScores||{}, rep=lastReport||{};
   const st=document.getElementById('pdf-status');
   if(!ps){ if(st){st.style.color='#e07a5a';st.textContent='Finish the assessment first to get your card.';} return; }
-  const c=document.getElementById('share-canvas'); const S=1080; const x=c.getContext('2d'); const cx=S/2, cy=S/2;
-  const rg=x.createRadialGradient(cx,cy,60,cx,cy,S*0.72);
-  rg.addColorStop(0,'#0b3a56'); rg.addColorStop(1,'#04182c');
+  const c=document.getElementById('share-canvas'); const S=1080; const x=c.getContext('2d');
+  const PAL=PARAM_KEYS.map(k=>PARAMS[k].color);
+  // cool blue → teal gradient background
+  const g=x.createLinearGradient(0,0,S,S);
+  g.addColorStop(0,'#1e40af'); g.addColorStop(0.5,'#0e7490'); g.addColorStop(1,'#14b8a6');
+  x.fillStyle=g; x.fillRect(0,0,S,S);
+  // clean soft highlight (no scattered shapes)
+  const rg=x.createRadialGradient(S*0.5,S*0.12,40,S*0.5,S*0.12,S*0.85);
+  rg.addColorStop(0,'rgba(255,255,255,0.12)'); rg.addColorStop(1,'rgba(255,255,255,0)');
   x.fillStyle=rg; x.fillRect(0,0,S,S);
-  _drawMandala(x,cx,cy);
-  // scrims for text legibility
-  x.fillStyle='rgba(4,16,30,0.52)'; x.fillRect(0,0,S,196); x.fillRect(0,S-252,S,252);
-  x.fillStyle='rgba(4,16,30,0.55)';
-  x.beginPath(); x.arc(cx,cy,234,0,Math.PI*2); x.fill();
-  x.strokeStyle='rgba(4,238,221,0.65)'; x.lineWidth=3;
-  x.beginPath(); x.arc(cx,cy,234,0,Math.PI*2); x.stroke();
   const sorted=Object.entries(d).sort((a,b)=>b[1]-a[1]);
   const topDim=sorted.length?PARAMS[sorted[0][0]].label:'—';
-  const center=(t,y,font,color)=>{ x.font=font; x.fillStyle=color; x.textAlign='center'; x.fillText(t,cx,y); };
-  center('DECODE YOUR PATTERN',90,'700 36px Inter, sans-serif','rgba(255,255,255,.9)');
-  center(((profile.name||'My').toUpperCase())+(profile.name?"'S MANDALA":' MANDALA'),144,'600 28px Inter, sans-serif','#04EEDD');
-  center('PATTERN SCORE',cy-116,'600 24px Inter, sans-serif','rgba(255,255,255,.65)');
-  center(String(ps.score),cy+40,'800 150px Inter, sans-serif','#ffffff');
-  center('/ 900  ·  '+ps.band.label.toUpperCase(),cy+108,'700 30px Inter, sans-serif',ps.band.color);
-  const be=(lastBadges||[]).slice(0,6).map(b=>b.emoji).join('  ');
-  if(be) center(be,S-204,'40px Inter, sans-serif','#ffffff');
-  center('TOP STRENGTH  ·  '+topDim,S-150,'700 34px Inter, sans-serif','#04EEDD');
-  if(rep.archetypeName) center(rep.archetypeName,S-104,'italic 600 30px Georgia, serif','rgba(255,255,255,.95)');
-  center('antarabarman.github.io/Project1   ·   by Antara Barman',S-54,'600 23px Inter, sans-serif','rgba(255,255,255,.78)');
+  const center=(t,y,font,color)=>{ x.font=font; x.fillStyle=color; x.textAlign='center'; x.textBaseline='alphabetic'; x.fillText(t,S/2,y); };
+  const shadow=on=>{ x.shadowColor=on?'rgba(0,0,0,.30)':'transparent'; x.shadowBlur=on?8:0; x.shadowOffsetY=on?3:0; };
+  // header
+  shadow(true);
+  center('DECODE YOUR PATTERN',88,'800 38px Inter, sans-serif','#ffffff');
+  center(((profile.name||'My').toUpperCase())+(profile.name?"'S PATTERN":' PATTERN'),140,'700 28px Inter, sans-serif','rgba(255,255,255,.96)');
+  shadow(false);
+  // white score panel
+  const pw=620, ph=250, px=(S-pw)/2, py=176;
+  x.shadowColor='rgba(0,0,0,.28)'; x.shadowBlur=30; x.shadowOffsetY=10;
+  x.fillStyle='#ffffff'; _rr(x,px,py,pw,ph,34); x.fill(); shadow(false);
+  center('PATTERN SCORE',py+54,'700 24px Inter, sans-serif','#8a7f64');
+  center(String(ps.score),py+182,'800 148px Inter, sans-serif','#1d1340');
+  center('/ 900   ·   '+ps.band.label.toUpperCase(),py+228,'800 30px Inter, sans-serif',ps.band.color);
+  // avatar + top strength
+  shadow(true);
+  const av=(typeof buildAvatar==='function')?buildAvatar(d):null;
+  center((av?av.emoji+'  ':'')+(av?av.name:(rep.archetypeName||'')),py+ph+70,'700 42px Inter, sans-serif','#ffffff');
+  center('TOP STRENGTH  ·  '+topDim,py+ph+118,'700 30px Inter, sans-serif','#a5f3fc');
+  shadow(false);
+  // clear, fully-labelled bar chart of all 10 traits — score above each bar, full name below
+  center('YOUR 10 TRAITS  ·  score out of 10',py+ph+178,'700 22px Inter, sans-serif','rgba(255,255,255,.95)');
+  const n=PARAM_KEYS.length, gap=16, x0=96, stripW=S-192, bw=(stripW-gap*(n-1))/n, base=806, maxH=120;
+  x.strokeStyle='rgba(255,255,255,.28)'; x.lineWidth=1; x.beginPath(); x.moveTo(x0,base+1); x.lineTo(x0+stripW,base+1); x.stroke();
+  PARAM_KEYS.forEach((k,i)=>{ const sc=d[k], h=Math.max(10,(sc/10)*maxH), bx=x0+i*(bw+gap);
+    x.fillStyle=PARAMS[k].color; _rr(x,bx,base-h,bw,h,6); x.fill();
+    x.fillStyle='#ffffff'; x.font='800 22px Inter, sans-serif'; x.textAlign='center'; x.textBaseline='alphabetic';
+    x.fillText(String(sc), bx+bw/2, base-h-10);
+    x.save(); x.translate(bx+bw/2, base+16); x.rotate(Math.PI/2);
+    x.textAlign='left'; x.textBaseline='middle'; x.fillStyle='rgba(255,255,255,.96)'; x.font='600 17px Inter, sans-serif';
+    x.fillText(PARAMS[k].label, 0, 0); x.restore(); });
+  // footer
+  center('antarabarman.github.io/Project1   ·   by Antara Barman',1000,'600 22px Inter, sans-serif','rgba(255,255,255,.95)');
   try{
     const url=c.toDataURL('image/png');
     const a=document.createElement('a'); a.href=url;
-    a.download=(profile.name?profile.name.trim().replace(/\s+/g,'-')+'-':'')+'pattern-mandala-card.png';
+    a.download=(profile.name?profile.name.trim().replace(/\s+/g,'-')+'-':'')+'pattern-card.png';
     document.body.appendChild(a); a.click(); a.remove();
-    if(st){st.style.color='';st.textContent='Saved your mandala card to downloads — post it on LinkedIn or WhatsApp! 📸';}
+    if(st){st.style.color='';st.textContent='Saved your card to downloads — post it on LinkedIn or WhatsApp! 📸';}
   }catch(e){ if(st){st.style.color='#e07a5a';st.textContent='Could not build the card in this browser — try the PDF instead.';} }
 }
 
