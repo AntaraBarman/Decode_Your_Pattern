@@ -4,6 +4,13 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project aims to follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.4.1] — 2026-07 — PDF export reliability fix
+### Fixed
+- **PDF download could hang indefinitely or fail silently.** `downloadPdf()` opened with an unguarded double-`requestAnimationFrame` wait that never resolves in a backgrounded/hidden browser tab — now raced against a short timer so it can never block forever.
+- Each report section capture (`html2canvas`) now has a hard 20-second timeout, and the whole build has a 60-second overall deadline, so one slow or stuck section can no longer freeze the entire download.
+- A section that fails or times out is now skipped rather than aborting the whole report; the final status message tells you if any sections were left out, instead of leaving the button stuck at "Building your PDF…" with no feedback.
+- If every section fails, the export now surfaces a clear error instead of silently producing an empty or corrupt file.
+
 ## [1.4.0] — 2026-07 — Copy & UX cleanup
 ### Changed
 - Removed all "game" framing from the assessment's on-screen copy, insight text, and internal code (result eyebrow, avatar-reveal headline, insight/recommendation strings, function names) in favour of neutral, pattern-focused language.

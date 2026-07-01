@@ -1712,12 +1712,30 @@ async function downloadPdf(){
   document.head.appendChild(styleOverride);
   // Give the browser one frame to apply the animation-freeze rules above before any
   // section gets captured, so html2canvas never snapshots a mid-animation state.
-  await new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+  // Some browser tabs pause requestAnimationFrame entirely while backgrounded/hidden,
+  // so this is raced against a short timer — it must never be able to hang forever.
+  await Promise.race([
+    new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))),
+    new Promise(resolve => setTimeout(resolve, 300))
+  ]);
 
   // Each direct child of the capture area is treated as one indivisible block —
   // captured and placed as its own image, so a page break can only ever fall
   // between blocks, never through the middle of a paragraph.
   const blocks = Array.from(captureEl.children).filter(el => !el.classList.contains('no-print'));
+
+  // A single stuck/slow capture (e.g. a font or image that never finishes loading)
+  // must never freeze the whole report indefinitely — every capture gets a hard
+  // timeout, and the whole build gets an overall deadline as a second safety net.
+  function withTimeout(promise, ms, label){
+    let timer;
+    const timeout = new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error(`Timed out capturing "${label}"`)), ms);
+    });
+    return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+  }
+  const overallDeadline = performance.now() + 60000; // never take longer than ~60s total
+  let skippedBlocks = 0;
 
   try {
     const { jsPDF } = window.jspdf;
@@ -1730,8 +1748,24 @@ async function downloadPdf(){
     let isFirstBlockOnPage = true;
 
     for (const block of blocks) {
-      const canvas = await html2canvas(block, { scale: 2, backgroundColor: '#fffdf8', useCORS: true });
+      if (performance.now() > overallDeadline) { skippedBlocks++; continue; }
+
+      let canvas;
+      try {
+        canvas = await withTimeout(
+          html2canvas(block, { scale: 2, backgroundColor: '#fffdf8', useCORS: true }),
+          20000,
+          block.className || block.tagName
+        );
+      } catch (blockErr) {
+        console.error('Skipping a PDF section — capture failed or timed out:', blockErr);
+        skippedBlocks++;
+        continue; // one bad/slow section must not break the whole report
+      }
+      if (!canvas || !canvas.width || !canvas.height) { skippedBlocks++; continue; }
+
       const blockHeightMm = (canvas.height * usableWidthMm) / canvas.width;
+      if (!isFinite(blockHeightMm) || blockHeightMm <= 0) { skippedBlocks++; continue; }
       const imgData = canvas.toDataURL('image/jpeg', 0.95);
 
       if (!isFirstBlockOnPage && cursorYMm + blockHeightMm > pageHeight - marginMm) {
@@ -1783,9 +1817,15 @@ async function downloadPdf(){
       pdf.text(`Page ${p} of ${totalPages}`, pageWidth - marginMm, pageHeight - 4, { align: 'right' });
     }
 
+    if (totalPages < 1 || blocks.length === skippedBlocks) {
+      throw new Error('Every section timed out or failed to capture — no PDF was produced.');
+    }
+
     const namePart = profile.name ? `${profile.name.trim().replace(/\s+/g, '-')}-` : '';
     pdf.save(`${namePart}decode-your-pattern-report.pdf`);
-    status.textContent = 'Downloaded. Check your browser\'s downloads folder.';
+    status.textContent = skippedBlocks > 0
+      ? `Downloaded, but ${skippedBlocks} section${skippedBlocks > 1 ? 's' : ''} took too long and ${skippedBlocks > 1 ? 'were' : 'was'} left out. Try again if you'd like the full report.`
+      : 'Downloaded. Check your browser\'s downloads folder.';
   } catch (err) {
     status.textContent = 'Something went wrong building the PDF. Try again, or use your browser\'s print-to-PDF as a fallback.';
     console.error('PDF generation failed:', err);
