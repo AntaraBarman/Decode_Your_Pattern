@@ -563,7 +563,7 @@
     <p class="lede">A few quick questions about you, then a thoughtfully mixed set — practical, logical, philosophical and psychological, plus your real likes, dislikes and triggers — <b>drawn fresh at random each time, so no two playthroughs are the same.</b> Scored across 10 dimensions and turned into a Pattern Score (like a credit score for how you live), colourful charts, an honest read, and a personal action plan.</p>
     <p class="creator-credit">Created by Antara Barman</p>
     <div class="dim-pills" id="dim-pills"></div>
-    <button class="btn-primary" onclick="showIntake()">Decode my pattern →</button>
+    <button class="btn-primary" onclick="showIntake()">Decode Your Pattern →</button>
     <p class="source-note">Takes about 15–18 minutes in total. Everything runs in your browser — nothing is sent anywhere or stored outside this page. This is a reflective tool for self-insight, not a clinical or scientifically validated psychological assessment, and it shouldn't be read as a fixed diagnosis of who you are.</p>
   </div>
 
@@ -1305,7 +1305,7 @@ function renderPersonalQuestion(){
   replayAnimation(document.getElementById('personal-q-card'));
   document.getElementById('personal-q-tag').textContent = `${q.tag} · question ${personalCurrent+1} of 5`;
   document.getElementById('personal-q-text').textContent = q.text;
-  document.getElementById('personal-next-btn').textContent = personalCurrent === 4 ? 'Start the assessment →' : 'Next →';
+  document.getElementById('personal-next-btn').textContent = personalCurrent === 4 ? 'Start The Assessment →' : 'Next →';
 
   const hasAnswer = q.type === 'mc' ? !!personalAnswers[q.key] : !!(personalAnswers[q.key] && personalAnswers[q.key].trim().length > 0);
   document.getElementById('personal-next-btn').disabled = !hasAnswer;
@@ -1396,7 +1396,7 @@ function renderQuestion(){
 
   const answered = answers[current] !== undefined;
   document.getElementById('next-btn').disabled = !answered;
-  document.getElementById('next-btn').textContent = current === total - 1 ? 'See my report →' : 'Next →';
+  document.getElementById('next-btn').textContent = current === total - 1 ? 'See Your Report →' : 'Next →';
 
   const body = document.getElementById('q-body');
   body.innerHTML = '';

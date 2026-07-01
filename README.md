@@ -62,7 +62,7 @@ Or just **[open the live demo](https://antarabarman.github.io/Decode_Your_Patter
 
 ```
 .
-├── index.html                  # Landing page → "Get my report" opens the assessment
+├── index.html                  # Landing page → "Get Your Report" opens the assessment
 ├── decode-your-pattern_6.html  # The assessment + report engine (single-file app)
 ├── social-preview.png          # Open Graph image for link sharing
 ├── docs/                       # Architecture, case study, API, schema, deployment

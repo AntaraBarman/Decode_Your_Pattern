@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/), and this
 - Removed all "game" framing from the assessment's on-screen copy, insight text, and internal code (result eyebrow, avatar-reveal headline, insight/recommendation strings, function names) in favour of neutral, pattern-focused language.
 - Simplified the Pattern Score description on the landing page (removed the "but for your behaviour" qualifier).
 - Renamed the report actions: **"Download my report as PDF"** → **"Download Your Report"**, **"Get my shareable card"** → **"Shareable Card"**.
+- Renamed the primary CTAs for consistent, direct phrasing: **"Get my report"** → **"Get Your Report"**, **"Decode my pattern"** → **"Decode Your Pattern"**, **"See my report"** → **"See Your Report"**, **"Start the assessment"** → **"Start The Assessment"**.
 ### Removed
 - The **Pattern Score history timeline** ("your last N attempts" chart) and its supporting code.
 - The standalone **"Save report as file"** (plain HTML download) button and its now-unused helper functions.
