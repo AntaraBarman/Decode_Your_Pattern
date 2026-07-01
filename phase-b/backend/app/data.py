@@ -12,7 +12,7 @@ PARAMS: dict[str, dict] = {
     "discipline":   {"label": "Discipline",   "color": "#f59e0b"},
     "resilience":   {"label": "Resilience",   "color": "#22c55e"},
     "adaptability": {"label": "Adaptability", "color": "#06b6d4"},
-    "selftrust":    {"label": "Self-trust",   "color": "#a855f7"},
+    "selftrust":    {"label": "Self-trust",   "color": "#f97316"},
     "boundaries":   {"label": "Boundaries",   "color": "#ec4899"},
     "patience":     {"label": "Patience",     "color": "#6366f1"},
     "clarity":      {"label": "Clarity",      "color": "#14b8a6"},
