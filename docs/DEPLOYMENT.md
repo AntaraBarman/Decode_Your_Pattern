@@ -33,6 +33,11 @@ The "Help Us Improve" feedback form at the end of the report is wired to send su
 Until this is set, feedback submissions are only saved locally in the visitor's browser (`localStorage`) —
 they will **not** reach you, so this step is required before the feedback feature is truly "live."
 
+**Free-plan limit:** Formspree's free tier caps submissions at 50 per month per form, resetting monthly.
+If that's ever hit, the form detects it and tells the visitor their response is saved locally and to try
+again in a few days, rather than losing it silently. If you outgrow 50/month, Formspree's paid plans raise
+that cap.
+
 ## v2 — full stack on free tiers
 
 | Layer | Free host | Notes |
