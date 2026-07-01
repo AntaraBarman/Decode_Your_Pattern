@@ -4,6 +4,16 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project aims to follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.6.0] — 2026-07 — AI Personality Pattern Report (7 sections, rule-based, $0)
+### Added
+- The report is now a full **AI Personality Pattern Report** with 7 sections: **Executive Summary** (a plain-language overview tying your archetype, top/bottom dimensions, Pattern Score, and core driver/trigger/value/fear together); **Blind Spots & Growth Areas** (up to 10 honest, constructively-framed tendencies — overthinking, impulsiveness, perfectionism, avoiding hard conversations, poor consistency, boundary struggles, risk aversion, self-criticism, decision paralysis, over-adapting — each tied to a concrete effect on work, relationships, learning, or growth); **Behavioral Pattern Analysis** (10 sub-styles: decision-making, communication, emotional tendencies, motivation, learning, response to pressure, leadership, collaboration, risk tolerance, adaptability); **Future Tendencies** (7 life areas — career, productivity, financial habits, relationships, stress management, personal development, work habits — always phrased as hedged possibilities, e.g. "you may be more likely to...", never as fact); **Well-being Considerations** (5 general lifestyle observations — stress, sleep, work-life balance, burnout risk, emotional resilience — with an explicit non-medical disclaimer); and an expanded **Personalized Growth Plan** (habits to build, habits to reduce, this week's challenge, a suggested learning focus, and practical strategies, alongside the existing week/month/year action plan).
+- **Confidence Meter**: every Blind Spot, Behavioral Style, and Future Tendency now carries a Low/Medium/High confidence badge, computed from the standard deviation of the raw answers behind the relevant dimension(s) — tightly clustered answers read as higher confidence, scattered ones as lower.
+- This entire feature is **rule-based and fully client-side** — no backend, no LLM API, no ongoing cost, consistent with the rest of the app's $0 architecture.
+### Changed
+- The old **"Pattern Notice"** (point-by-point list) and **"Style insights"** (4-card grid) sections have been merged into and superseded by the new Executive Summary, Blind Spots & Growth Areas, and Behavioral Pattern Analysis sections — no functional overlap remains.
+### Removed
+- `buildPatternPoints`, `buildInsights`, `renderInsights` and their now-unused DOM targets (`#pattern-points`, `#insight-grid`) and CSS (`.pt-*`, `.insight-card`, `.ic-*`) — fully superseded by the sections above.
+
 ## [1.5.1] — 2026-07 — Feedback: handle the free-tier monthly cap
 ### Fixed
 - Formspree's free plan caps submissions at 50/month; once hit, it returns a 429. The feedback form now saves its local `localStorage` backup **before** attempting the network call (not just on generic failure), and specifically detects a 429 to show an honest message — "we've hit our feedback limit for this month, try again in a few days" — instead of a generic "try again" that wouldn't actually help until the cap resets.

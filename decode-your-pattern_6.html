@@ -350,8 +350,40 @@
   .accent-charts  { border-left-color:#06b6d4 !important; background:linear-gradient(180deg,rgba(6,182,212,.10),var(--panel)) !important; }
   .accent-notice  { border-left-color:#ec4899 !important; background:linear-gradient(180deg,rgba(236,72,153,.10),var(--panel)) !important; }
   .accent-scenario{ border-left-color:#ef4444 !important; background:linear-gradient(180deg,rgba(239,68,68,.10),var(--panel)) !important; }
+  .accent-summary { border-left-color:#19D5BF !important; background:linear-gradient(180deg,rgba(25,213,191,.10),var(--panel)) !important; }
+  .accent-future  { border-left-color:#6366f1 !important; background:linear-gradient(180deg,rgba(99,102,241,.10),var(--panel)) !important; }
+  .accent-wellbeing{ border-left-color:#14b8a6 !important; background:linear-gradient(180deg,rgba(20,184,166,.10),var(--panel)) !important; }
   .label-xl { font-family:'Fraunces',serif; font-size:22px; font-weight:700; color:#fbf8ef; margin-bottom:4px; }
   .label-sub { font-size:13.5px; color:#cfc8b8; margin-bottom:16px; line-height:1.5; }
+
+  /* ===== Blind spots / behavioral styles / future tendencies / well-being / growth plan v2 ===== */
+  .exec-summary-text { font-size:15px; line-height:1.7; color:var(--text-light); }
+  .bs-list, .bstyle-list, .future-list, .wellbeing-list { display:flex; flex-direction:column; gap:14px; }
+  .bs-item, .bstyle-item, .future-item, .wellbeing-item {
+    background:rgba(255,255,255,.03); border:1px solid var(--panel-line); border-radius:12px; padding:14px 16px;
+  }
+  .bs-head, .bstyle-head, .future-head, .wellbeing-head {
+    display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:7px; flex-wrap:wrap;
+  }
+  .bs-name, .bstyle-name, .future-area, .wellbeing-area {
+    font-family:'Fraunces',serif; font-weight:700; font-size:15px; color:#fbf8ef; display:flex; align-items:center; gap:8px;
+  }
+  .bs-text, .bstyle-text, .future-text, .wellbeing-text { font-size:13.5px; line-height:1.6; color:var(--text-light-soft); }
+  .confidence-badge {
+    font-size:10.5px; font-weight:700; text-transform:uppercase; letter-spacing:.04em;
+    padding:3px 9px; border-radius:99px; border:1px solid; white-space:nowrap; flex-shrink:0;
+  }
+  .growth-v2-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; margin-bottom:6px; }
+  .growth-v2-block { background:rgba(255,255,255,.03); border:1px solid var(--panel-line); border-radius:12px; padding:14px 16px; }
+  .growth-v2-block h4 { font-family:'Fraunces',serif; font-size:14px; color:var(--gold); margin-bottom:9px; }
+  .growth-v2-block ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px; }
+  .growth-v2-block li { font-size:13px; line-height:1.5; color:var(--text-light-soft); padding-left:14px; position:relative; }
+  .growth-v2-block li::before { content:"–"; position:absolute; left:0; color:var(--gold); }
+  .wellbeing-disclaimer { font-size:12px; color:var(--text-light-soft); opacity:.8; background:rgba(255,255,255,.03);
+    border:1px dashed var(--panel-line); border-radius:10px; padding:10px 14px; margin-top:4px; line-height:1.55; }
+  @media (max-width: 480px) {
+    .bs-head, .bstyle-head, .future-head, .wellbeing-head { flex-direction:column; align-items:flex-start; gap:6px; }
+  }
 
   /* floating music button */
   .music-btn { position:fixed; right:18px; bottom:18px; z-index:200; width:50px; height:50px; border-radius:50%;
@@ -383,13 +415,6 @@
   .charts-flex { display:flex; gap:18px; flex-wrap:wrap; align-items:center; }
   .charts-flex > .radar-box { flex:1; min-width:240px; text-align:center; }
   .charts-flex > .bars-box { flex:1.2; min-width:260px; }
-
-  /* point-wise notice */
-  .pt-list { list-style:none; padding:0; margin:0; }
-  .pt-item { display:flex; gap:11px; margin-bottom:13px; align-items:flex-start; }
-  .pt-ico { flex-shrink:0; width:24px; height:24px; border-radius:7px; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:800; color:#fff; margin-top:1px; }
-  .pt-body { font-size:14.5px; line-height:1.55; color:var(--text-light); }
-  .pt-body b { color:#fff; }
 
   /* scenarios */
   .scenario { border:1px solid var(--panel-line); border-radius:12px; padding:16px 18px; margin-bottom:14px; background:rgba(255,255,255,.03); }
@@ -443,13 +468,6 @@
   #dim-label{transition:color .4s ease;font-weight:700}
 
   /* ===== Phase 1 premium upgrades ===== */
-  .insight-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
-  .insight-card{background:rgba(255,255,255,.04);border:1px solid var(--panel-line);border-radius:14px;padding:16px 18px}
-  .insight-card .ic-top{display:flex;align-items:center;gap:9px;margin-bottom:8px}
-  .insight-card .ic-emoji{font-size:22px;line-height:1}
-  .insight-card .ic-title{font-family:'Fraunces',serif;font-weight:600;font-size:15.5px;color:#fbf8ef}
-  .insight-card .ic-tag{font-size:11px;font-weight:700;color:#04241f;border-radius:6px;padding:2px 8px;display:inline-block;margin-bottom:8px}
-  .insight-card p{font-size:13.5px;line-height:1.55;color:var(--text-light)}
 
   /* badges */
   .badge-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:6px}
@@ -708,6 +726,12 @@
       </div>
     </div>
 
+    <div class="section-card accent-summary">
+      <p class="label-xl">Executive Summary</p>
+      <p class="label-sub">A concise overview before the detail below.</p>
+      <p class="exec-summary-text" id="exec-summary-text"></p>
+    </div>
+
     <div class="section-card accent-score">
       <p class="label-xl">Your Pattern Score</p>
       <p class="label-sub">Like a credit score reads your financial history, this reads your behavioural history — a single 300–900 number built from all your answers. It's blunt on purpose.</p>
@@ -736,15 +760,28 @@
     </div>
 
     <div class="section-card accent-notice">
-      <p class="label-xl">Pattern Notice — read this twice</p>
-      <p class="label-sub">The specific, point-by-point read on how you actually play. No sugar-coating — this is the honest version, built from your own answers.</p>
-      <ul class="pt-list" id="pattern-points"></ul>
+      <p class="label-xl">Blind Spots &amp; Growth Areas</p>
+      <p class="label-sub">An honest, respectful reality check — tendencies built from your own answers, with a confidence read on how consistent the underlying answers were.</p>
+      <div class="bs-list" id="blindspot-list"></div>
     </div>
 
     <div class="section-card accent-charts">
-      <p class="label-xl">🧠 Your styles, decoded</p>
-      <p class="label-sub">A read on <em>how</em> you operate — your decision-making, communication, stress and learning styles, plus what surprised us, your hidden potential, and your blind spots.</p>
-      <div class="insight-grid" id="insight-grid"></div>
+      <p class="label-xl">🧠 Behavioral Pattern Analysis</p>
+      <p class="label-sub">How you tend to operate day to day, across ten dimensions of behavior.</p>
+      <div class="bstyle-list" id="bstyle-list"></div>
+    </div>
+
+    <div class="section-card accent-future">
+      <p class="label-xl">Future Tendencies</p>
+      <p class="label-sub">Not certainties — tendencies. If your current patterns continue unchanged, here's what they can sometimes lead to.</p>
+      <div class="future-list" id="future-list"></div>
+    </div>
+
+    <div class="section-card accent-wellbeing">
+      <p class="label-xl">Well-being Considerations</p>
+      <p class="label-sub">General lifestyle observations based only on your answers here.</p>
+      <div class="wellbeing-list" id="wellbeing-list"></div>
+      <p class="wellbeing-disclaimer">These are general lifestyle observations, not a medical or mental health assessment or diagnosis. If you're struggling, please speak with a qualified professional.</p>
     </div>
 
     <div class="section-card accent-scenario">
@@ -766,8 +803,31 @@
     </div>
 
     <div class="section-card accent-plan">
-      <p class="label">Your action plan</p>
-      <div class="plan-block">
+      <p class="label-xl">Personalized Growth Plan</p>
+      <p class="label-sub">Practical, specific, and built from your own weakest and strongest dimensions.</p>
+      <div class="growth-v2-grid">
+        <div class="growth-v2-block">
+          <h4>Habits to build</h4>
+          <ul id="growth-build"></ul>
+        </div>
+        <div class="growth-v2-block">
+          <h4>Habits to reduce</h4>
+          <ul id="growth-reduce"></ul>
+        </div>
+        <div class="growth-v2-block">
+          <h4>This week's challenge</h4>
+          <ul id="growth-challenge"></ul>
+        </div>
+        <div class="growth-v2-block">
+          <h4>Suggested learning focus</h4>
+          <ul id="growth-learning"></ul>
+        </div>
+        <div class="growth-v2-block">
+          <h4>Practical strategies</h4>
+          <ul id="growth-strategies"></ul>
+        </div>
+      </div>
+      <div class="plan-block" style="margin-top:16px;">
         <p class="plan-period">This week</p>
         <div id="plan-week"></div>
       </div>
@@ -1711,7 +1771,7 @@ function computeAndShowResult(){
   fillPlan('plan-year', plan.year);
 
   lastReport = { overall, dimScores, archetypeName: archetype.name, name: profile.name };
-  renderV2(dimScores, overall);
+  renderV2(dimScores, overall, archetype);
   show('result');
 }
 
@@ -1759,20 +1819,31 @@ async function downloadPdf(){
     }
     #pdf-capture-area .dimbar-track { background:#ececec !important; }
     #pdf-capture-area .scenario { background:#fbfbf8 !important; }
-    #pdf-capture-area .pt-body, #pdf-capture-area .pt-body b, #pdf-capture-area .gauge-verdict, #pdf-capture-area .tt-block { color:#1c1812 !important; }
+    #pdf-capture-area .gauge-verdict, #pdf-capture-area .tt-block { color:#1c1812 !important; }
     #pdf-capture-area .dimbar-name, #pdf-capture-area .dimbar-val { color:#1c1812 !important; }
     #pdf-capture-area .label-xl { color:#1c1812 !important; }
     #pdf-capture-area .label-sub, #pdf-capture-area .scenario .sc-line, #pdf-capture-area .gauge-range { color:#4a4332 !important; }
     #pdf-capture-area .honesty, #pdf-capture-area .scenario h4 { color:#1c1812 !important; }
     #pdf-capture-area .honesty b { color:#9a6a00 !important; }
     #pdf-capture-area .disclaimer b { color:#1c1812 !important; }
-    #pdf-capture-area .insight-card { background:#fbfbf8 !important; border:1px solid #e4ddd0 !important; }
-    #pdf-capture-area .insight-card .ic-title, #pdf-capture-area .insight-card p, #pdf-capture-area .badge .b-name,
+    #pdf-capture-area .badge .b-name,
     #pdf-capture-area .tool-body, #pdf-capture-area .tool-body b,
     #pdf-capture-area .avatar-name, #pdf-capture-area .story-text, #pdf-capture-area .domain-name, #pdf-capture-area .dna-name { color:#1c1812 !important; }
     #pdf-capture-area .domain-read, #pdf-capture-area .avatar-line { color:#4a4332 !important; }
     #pdf-capture-area .tool-item, #pdf-capture-area .domain-card { background:#fbfbf8 !important; }
     #pdf-capture-area .tool-body a { color:#0E7A6E !important; }
+    /* 7-section AI report: exec summary, blind spots, behavioral styles, future tendencies, well-being, growth plan v2 */
+    #pdf-capture-area .exec-summary-text { color:#1c1812 !important; }
+    #pdf-capture-area .bs-item, #pdf-capture-area .bstyle-item, #pdf-capture-area .future-item, #pdf-capture-area .wellbeing-item {
+      background:#fbfbf8 !important; border:1px solid #e4ddd0 !important;
+    }
+    #pdf-capture-area .bs-name, #pdf-capture-area .bstyle-name, #pdf-capture-area .future-area, #pdf-capture-area .wellbeing-area { color:#1c1812 !important; }
+    #pdf-capture-area .bs-text, #pdf-capture-area .bstyle-text, #pdf-capture-area .future-text, #pdf-capture-area .wellbeing-text { color:#4a4332 !important; }
+    #pdf-capture-area .wellbeing-disclaimer { color:#6b5f45 !important; }
+    #pdf-capture-area .confidence-badge { border:1px solid rgba(0,0,0,.08) !important; }
+    #pdf-capture-area .growth-v2-block { background:#fbfbf8 !important; border:1px solid #e4ddd0 !important; }
+    #pdf-capture-area .growth-v2-block h4 { color:#1c1812 !important; }
+    #pdf-capture-area .growth-v2-block li { color:#4a4332 !important; }
   `;
   document.head.appendChild(styleOverride);
   // Give the browser one frame to apply the animation-freeze rules above before any
@@ -2068,32 +2139,9 @@ const FEAR_NOTE={
   "Failing publicly":"a fear of failing publicly — which can stop you starting anything you might be seen to fail at",
   "Running out of time":"a fear of running out of time — which can rush decisions that actually deserve patience"
 };
-function escapeHtml(s){ return String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
-function buildPatternPoints(dimScores){
-  const sorted=Object.entries(dimScores).sort((a,b)=>b[1]-a[1]);
-  const top=sorted.slice(0,2), bottom=sorted.slice(-2).reverse();
-  const spread=sorted[0][1]-sorted[sorted.length-1][1];
-  const pts=[];
-  const P=(ico,color,html)=>pts.push({ico,color,html});
-  P('1','#22c55e',`Your engine is <b>${PARAMS[top[0][0]].label.toLowerCase()}</b> (${top[0][1]*10}/100) and <b>${PARAMS[top[1][0]].label.toLowerCase()}</b> (${top[1][1]*10}/100). When things go well for you, it's usually one of these two doing the quiet work.`);
-  P('2','#ef4444',`Your real drag is <b>${PARAMS[bottom[0][0]].label.toLowerCase()}</b> (${bottom[0][1]*10}/100)${bottom[0][1]<=3?" — and it's low enough to be actively costing you, not just lagging":""}. ${IMPROVEMENT_PHRASES[bottom[0][0]]}`);
-  P('3','#f59e0b',`Right behind it: <b>${PARAMS[bottom[1][0]].label.toLowerCase()}</b> (${bottom[1][1]*10}/100). ${IMPROVEMENT_PHRASES[bottom[1][0]]}`);
-  // tension
-  const matched=TENSION_RULES.filter(r=>r.test(dimScores));
-  if(matched.length){ P('⚡','#f97316',`<b>The tension to watch:</b> ${matched[0].text}`); }
-  // spread read
-  if(spread<=2){ P('◆','#06b6d4',`Your scores are unusually <b>even</b> — no single dimension is dragging, but none is pulling you forward hard either. Consistency is your style; deliberate spikes are your opportunity.`); }
-  else if(spread>=6){ P('◆','#06b6d4',`Your profile is <b>spiky</b> — a ${spread*10}-point gap between your highest and lowest. You're carried by your strengths and periodically ambushed by your weak spots. The fix is rarely "do more of what you're good at."`); }
-  // locus from selftrust tricky already folded into score; add driver/trigger
-  if(trickyProfile.driver){ P('♦','#ec4899',`Underneath it sits <b>${DRIVER_NOTE[trickyProfile.driver]||'a core driver worth naming'}</b>.`); }
-  if(trickyProfile.trigger){ P('▲','#f97316',`${TRIGGER_LOOP[trickyProfile.trigger]||''} That's a loop worth catching in real time.`); }
-  if(trickyProfile.value){ P('●','#6366f1',`You chose <b>${escapeHtml(trickyProfile.value.toLowerCase())}</b> as your core value — a useful lens for why some "good" options still feel wrong to you.`); }
-  if(trickyProfile.fear){ P('✦','#06b6d4',`And quietly underneath: ${FEAR_NOTE[trickyProfile.fear]||'a core fear worth naming'}.`); }
-  // honest closer
-  const low=bottom[0][1];
-  P('→','#19D5BF', low<=3 ? `<b>The honest bottom line:</b> one or two foundations are weak enough that working on anything else is building on sand. Start there, even though it's the least exciting place to start.` : `<b>The honest bottom line:</b> you don't have a crisis dimension — you have a ceiling. Raising your two weakest areas a few points would lift everything above them.`);
-  return pts;
-}
+// Note: DRIVER_NOTE/TRIGGER_LOOP/FEAR_NOTE above feed buildExecutiveSummary() further down —
+// the old point-wise "Pattern Notice" that used to read them has been merged into the new
+// Executive Summary + Blind Spots & Growth Areas sections.
 
 /* ---------- 6. Scenarios where it bites ---------- */
 const SCENARIOS={
@@ -2113,9 +2161,302 @@ function buildScenarios(dimScores){
   return weak.map(k=>({dim:k, ...SCENARIOS[k][0]}));
 }
 
+/* =========================================================================
+   AI PERSONALITY PATTERN REPORT — 7 sections, fully rule-based, $0, client-side
+   (no backend, no LLM API, no ongoing cost — see docs/ARCHITECTURE.md)
+   ========================================================================= */
+
+/* ---------- Confidence meter: how consistent were the underlying answers? ---------- */
+// Confidence is derived from the spread (standard deviation) of the raw, normalized
+// (0–10) answer scores that fed each dimension — tightly clustered answers mean the
+// dimension score is a stable read; scattered answers mean it's a rougher estimate.
+function computeDimConfidence(dimKey){
+  const vals = answers.filter(a=>a && a.param===dimKey).map(a=>(a.score/(a.max||1))*10);
+  if(vals.length<2) return {sd:0, level:'Medium'};
+  const mean = vals.reduce((s,v)=>s+v,0)/vals.length;
+  const variance = vals.reduce((s,v)=>s+(v-mean)*(v-mean),0)/vals.length;
+  const sd = Math.sqrt(variance);
+  const level = sd<=1.4 ? 'High' : sd<=2.8 ? 'Medium' : 'Low';
+  return {sd, level};
+}
+const CONFIDENCE_RANK = {Low:0, Medium:1, High:2};
+function worstConfidence(dims){
+  const list = Array.isArray(dims) ? dims : [dims];
+  return list.map(k=>computeDimConfidence(k).level)
+    .reduce((worst,l)=> CONFIDENCE_RANK[l]<CONFIDENCE_RANK[worst] ? l : worst, 'High');
+}
+function confidenceBadge(dims){
+  const level = worstConfidence(dims);
+  const color = level==='High' ? '#22c55e' : level==='Medium' ? '#eab308' : '#ef4444';
+  return `<span class="confidence-badge" style="background:${color}22;color:${color}">Confidence: ${level}</span>`;
+}
+
+/* ---------- 1. Executive Summary ---------- */
+function buildExecutiveSummary(d, archetype, ps){
+  const sorted = Object.entries(d).sort((a,b)=>b[1]-a[1]);
+  const top=sorted[0], top2=sorted[1], low=sorted[sorted.length-1], low2=sorted[sorted.length-2];
+  const L=k=>PARAMS[k].label.toLowerCase();
+  let s = `Overall, your pattern reads as ${archetype.name} — ${archetype.tagline}. Your strongest dimensions are ${L(top[0])} (${top[1]*10}/100) and ${L(top2[0])} (${top2[1]*10}/100), while ${L(low[0])} (${low[1]*10}/100) and ${L(low2[0])} (${low2[1]*10}/100) are currently your softest spots. That combination places your Pattern Score at ${ps.score}/900 (${ps.band.label.toLowerCase()}).`;
+  const extras=[];
+  if(trickyProfile.driver) extras.push(DRIVER_NOTE[trickyProfile.driver] || 'a core driver worth naming');
+  if(trickyProfile.fear) extras.push(FEAR_NOTE[trickyProfile.fear] || 'a core fear worth naming');
+  if(extras.length) s += ` Underneath the numbers sits ${extras.join(', and ')} — worth keeping in mind as you read the rest of this report.`;
+  if(trickyProfile.trigger) s += ` ${TRIGGER_LOOP[trickyProfile.trigger]||''}`;
+  if(trickyProfile.value) s += ` You named "${trickyProfile.value.toLowerCase()}" as a core value — a useful lens for why some options that look "good" on paper can still feel wrong to you.`;
+  s += ` None of this is fixed — it's a snapshot of tendencies built from how you answered today, and every section below explains the reasoning rather than asking you to take it on faith.`;
+  return s;
+}
+
+/* ---------- 2. Blind Spots & Growth Areas ---------- */
+// Honest, constructive tendencies — never framed as a verdict on character, always tied
+// to a concrete effect on work, relationships, learning, or growth.
+const BLIND_SPOT_LIBRARY = [
+  {name:'Overthinking', dims:['awareness','action'], test:d=>d.awareness>=6&&d.action<=4,
+    text:"You notice a lot — sometimes too much. Analysis can stretch past the point of useful, which can show up as decisions that take longer than they need to at work, and as conversations you replay long after they're over."},
+  {name:'Impulsiveness', dims:['action','discipline'], test:d=>d.action>=7&&d.discipline<=4,
+    text:"You move fast, which is often an asset, but the follow-through systems haven't caught up — projects can start strong and stall, and quick commitments sometimes outrun what you actually meant."},
+  {name:'Perfectionism', dims:['clarity','patience'], test:d=>d.clarity>=7&&d.patience<=4,
+    text:"Knowing exactly what 'good' looks like is a strength, but it can tip into holding work back until it feels fully ready — costing you launches, feedback, and momentum in learning something new."},
+  {name:'Avoiding difficult conversations', dims:['boundaries','action'], test:d=>d.boundaries<=4&&d.action<=5,
+    text:"Necessary but uncomfortable conversations tend to get postponed. Over time this can quietly erode trust in relationships and let small work issues grow into bigger ones."},
+  {name:'Poor consistency', dims:['discipline','resilience'], test:d=>d.discipline<=4,
+    text:"Your follow-through leans on how you feel that day rather than a fixed system, so good intentions don't always survive a bad week — a pattern that shows up most in long-term growth goals."},
+  {name:'Difficulty setting boundaries', dims:['boundaries','selftrust'], test:d=>d.boundaries<=4&&d.selftrust<=5,
+    text:"Other people's priorities have a way of becoming yours by default. At work this can mean carrying more than your share; in relationships it can mean resentment that never gets voiced."},
+  {name:'Risk aversion', dims:['action','resilience'], test:d=>d.action<=4&&d.resilience<=4,
+    text:"Uncertainty reads as a signal to wait rather than move, which can protect you from bad bets but also from good ones — worth watching in both career moves and personal growth."},
+  {name:'Excessive self-criticism', dims:['selftrust','resilience'], test:d=>d.selftrust<=4&&d.resilience<=5,
+    text:"Your inner read on your own performance tends to run harsher than the evidence supports. This can drive real standards, but it also taxes confidence and can make even kind feedback land harder than intended."},
+  {name:'Decision paralysis', dims:['clarity','selftrust'], test:d=>d.clarity<=4&&d.selftrust<=4,
+    text:"Without a clear internal yardstick and without full trust in your own read, decisions — even small ones — can take up disproportionate time and energy, at work and in day-to-day life."},
+  {name:'Over-adapting to others', dims:['adaptability','boundaries'], test:d=>d.adaptability>=7&&d.boundaries<=4,
+    text:"You flex easily to fit a room or a relationship, which is genuinely useful, but it can mean your own preferences get deprioritized so often that they become hard to name."}
+];
+function buildBlindSpots(d){
+  let list = BLIND_SPOT_LIBRARY.filter(b=>b.test(d));
+  if(list.length<5){
+    const weakest4 = Object.entries(d).sort((a,b)=>a[1]-b[1]).slice(0,4).map(([k])=>k);
+    BLIND_SPOT_LIBRARY.forEach(b=>{
+      if(list.length>=5) return;
+      if(!list.includes(b) && b.dims.some(k=>weakest4.includes(k))) list.push(b);
+    });
+  }
+  return list.slice(0,10);
+}
+function renderBlindSpots(d){
+  const wrap=document.getElementById('blindspot-list'); wrap.innerHTML='';
+  buildBlindSpots(d).forEach(b=>{
+    const el=document.createElement('div'); el.className='bs-item';
+    el.innerHTML=`<div class="bs-head"><span class="bs-name">${b.name}</span>${confidenceBadge(b.dims)}</div><p class="bs-text">${b.text}</p>`;
+    wrap.appendChild(el);
+  });
+}
+
+/* ---------- 3. Behavioral Pattern Analysis (10 sub-styles) ---------- */
+function buildBehavioralStyles(d){
+  const styles=[];
+  let dm = d.selftrust>=7&&d.clarity>=7 ? "Decisive and self-directed — you commit to your own read of a situation and rarely relitigate it."
+    : d.selftrust<=4 ? "Consensus-seeking — you gather outside input before committing, which adds safety but can slow you down."
+    : d.action<=4 ? "Deliberate — you weigh options thoroughly before moving."
+    : "Balanced — you blend instinct with input and adjust as you go.";
+  styles.push({area:'Decision-making style', text:dm, dims:['selftrust','clarity','action']});
+  let cm = d.boundaries>=7&&d.selftrust>=7 ? "Direct and boundaried — you say what you mean and protect your limits."
+    : d.boundaries<=4 ? "Accommodating — you read the room and keep the peace, sometimes at the cost of saying what you need."
+    : d.awareness>=7 ? "Thoughtful and measured — you notice the dynamics in a room before you speak."
+    : "Even-handed — you adapt your tone to the situation.";
+  styles.push({area:'Communication style', text:cm, dims:['boundaries','selftrust','awareness']});
+  let et = d.resilience>=7&&d.awareness>=7 ? "Steady and self-aware — you notice what you're feeling and rarely stay stuck in it."
+    : d.resilience<=4 ? "Responsive — feelings register strongly and can take real time to settle."
+    : d.awareness<=4 ? "Runs somewhat below awareness — reactions can surface before you've fully named what's driving them."
+    : "Moderate — emotional swings happen but generally stay manageable.";
+  styles.push({area:'Emotional tendencies', text:et, dims:['resilience','awareness']});
+  let mp = d.discipline>=7 ? "System-driven — your motivation is backed by routines, so it holds up even on low-energy days."
+    : d.growth>=7 ? "Growth-driven — you're pulled forward by the idea of improving, more than by external reward."
+    : d.discipline<=4 ? "Mood-driven — motivation tracks closely with how you feel that day, which makes consistency harder."
+    : "Mixed — a blend of internal drive and situational push.";
+  styles.push({area:'Motivation patterns', text:mp, dims:['discipline','growth']});
+  let ls = d.growth>=7&&d.awareness>=7 ? "Reflective — you pull lessons from setbacks, yours and other people's, and update quickly."
+    : d.growth<=4 ? "Experiential — lessons tend to land through direct experience rather than observation."
+    : d.adaptability>=7 ? "Experimental — you learn by trying, adjusting, and trying again."
+    : "Steady — you build understanding gradually and apply it once it feels solid.";
+  styles.push({area:'Learning style', text:ls, dims:['growth','awareness','adaptability']});
+  let rp = d.resilience>=7 ? "Steady under load — pressure rarely knocks you far off line."
+    : d.resilience<=4&&d.patience<=4 ? "Reactive, then recovering — stress lands hard at first and can spill into the next day."
+    : d.adaptability<=4 ? "You brace and hold — under stress you tend to grip the original plan tighter."
+    : "Moderate — stress affects you, but you generally find your footing within a day or two.";
+  styles.push({area:'Response to pressure', text:rp, dims:['resilience','patience','adaptability']});
+  let lt = d.selftrust>=7&&d.boundaries>=7 ? "Leads from conviction — comfortable setting direction and holding a line, even when it's unpopular."
+    : d.awareness>=7&&d.boundaries<=4 ? "Leads by consensus — highly attuned to the group, but can under-assert your own call."
+    : d.discipline>=7 ? "Leads by example — your own consistency tends to set the pace for people around you."
+    : "Situational — your leadership style shifts with context rather than following one fixed mode.";
+  styles.push({area:'Leadership tendencies', text:lt, dims:['selftrust','boundaries','awareness','discipline']});
+  let cs = d.boundaries>=7&&d.awareness>=7 ? "Collaborative but clear — you work well with others without losing track of your own priorities."
+    : d.boundaries<=4 ? "Accommodating collaborator — you tend to absorb extra load to keep things smooth."
+    : d.selftrust<=4 ? "Consensus-oriented — you value group agreement, sometimes over a faster individual call."
+    : "Independent-leaning — you collaborate readily but default to your own process when it's up to you.";
+  styles.push({area:'Collaboration style', text:cs, dims:['boundaries','awareness','selftrust']});
+  let rt = d.action>=7&&d.resilience>=6 ? "Higher risk tolerance — you're willing to move on incomplete information and recover if it doesn't work out."
+    : d.action<=4&&d.resilience<=4 ? "Lower risk tolerance — uncertainty reads as a signal to wait, which protects you from bad bets but also from good ones."
+    : "Moderate risk tolerance — you'll take a calculated risk when the upside is clear.";
+  styles.push({area:'Risk tolerance', text:rt, dims:['action','resilience']});
+  let ad = d.adaptability>=7&&d.clarity>=6 ? "Flexible with direction — you change approach easily without losing sight of the goal."
+    : d.adaptability>=7 ? "Highly flexible — you shift course easily, though without a fixed target that can read as chasing whatever's loudest."
+    : d.adaptability<=4 ? "Steadier by default — you tend to stay the course, which is a strength until the plan itself stops working."
+    : "Balanced — you adjust when the evidence calls for it, without abandoning a plan prematurely.";
+  styles.push({area:'Adaptability', text:ad, dims:['adaptability','clarity']});
+  return styles;
+}
+function renderBehavioralStyles(d){
+  const wrap=document.getElementById('bstyle-list'); wrap.innerHTML='';
+  buildBehavioralStyles(d).forEach(s=>{
+    const el=document.createElement('div'); el.className='bstyle-item';
+    el.innerHTML=`<div class="bstyle-head"><span class="bstyle-name">${s.area}</span>${confidenceBadge(s.dims)}</div><p class="bstyle-text">${s.text}</p>`;
+    wrap.appendChild(el);
+  });
+}
+
+/* ---------- 4. Future Tendencies (not certainties — hedged, probability-based language) ---------- */
+function buildFutureTendencies(d){
+  const items=[];
+  items.push({area:'Career', dims:['action','clarity','growth'], text:
+    (d.action<=4&&d.clarity>=6) ? "You may be more likely to know exactly what you want professionally but delay the moves that get you there — if this pattern continues, opportunities can pass while you're still preparing to act on them."
+    : d.growth>=7 ? "If your current learning habits continue, you're likely to keep compounding skills steadily — this pattern tends to open doors gradually rather than all at once."
+    : "Your career trajectory will likely continue to track closely with how consistently you act on the opportunities you already notice."});
+  items.push({area:'Productivity', dims:['discipline'], text:
+    d.discipline<=4 ? "This pattern can sometimes lead to productivity that depends heavily on mood and energy — strong weeks followed by ones where little moves forward, unless a system is built to smooth that out."
+    : "If your current systems hold, your productivity is likely to stay relatively steady, including through weeks where motivation dips."});
+  items.push({area:'Financial habits', dims:['discipline','patience'], text:
+    (d.discipline<=4&&d.patience<=4) ? "You may be more likely to make financial decisions reactively rather than by plan — if unchanged, this pattern can make longer-term goals like saving or investing harder to sustain."
+    : "Your financial habits are likely to keep benefiting from the same discipline and patience patterns showing up elsewhere in your profile."});
+  items.push({area:'Relationships', dims:['boundaries'], text:
+    d.boundaries<=4 ? "If this pattern continues, you may find yourself absorbing more of other people's priorities than you'd choose to, which over time can quietly build resentment even in relationships you value."
+    : "Your relationships are likely to continue benefiting from your ability to hold your own boundaries while staying engaged."});
+  items.push({area:'Stress management', dims:['resilience'], text:
+    d.resilience<=4 ? "You may be more likely to feel the full weight of setbacks before recovering — without a deliberate reset habit, this can sometimes extend recovery time after difficult periods."
+    : "Your stress response is likely to remain a relative strength, though it's worth watching under sustained rather than one-off pressure."});
+  items.push({area:'Personal development', dims:['awareness','action'], text:
+    (d.awareness>=7&&d.action<=4) ? "You're likely to keep gaining real insight about yourself — the open question is whether that insight continues converting into action, or stays mostly observational."
+    : "If current patterns continue, your personal development is likely to progress at a pace that tracks your consistency more than your insight."});
+  items.push({area:'Work habits', dims:['discipline','resilience'], text:
+    (d.discipline>=7&&d.resilience<=4) ? "Your systems are likely to keep you productive day-to-day, though this pattern can sometimes be more fragile than it looks once real pressure hits."
+    : "Your work habits are likely to continue reflecting the same discipline and adaptability patterns seen across the rest of your profile."});
+  return items;
+}
+function renderFutureTendencies(d){
+  const wrap=document.getElementById('future-list'); wrap.innerHTML='';
+  buildFutureTendencies(d).forEach(f=>{
+    const el=document.createElement('div'); el.className='future-item';
+    el.innerHTML=`<div class="future-head"><span class="future-area">${f.area}</span>${confidenceBadge(f.dims)}</div><p class="future-text">${f.text}</p>`;
+    wrap.appendChild(el);
+  });
+}
+
+/* ---------- 5. Well-being Considerations (general lifestyle observations, not medical) ---------- */
+function buildWellbeing(d){
+  return [
+    {area:'Stress management', dims:['resilience'], text: d.resilience<=4
+      ? "Based on your answers, stress may tend to linger longer than you'd like before settling. A simple, repeatable reset habit — even a few minutes — can help shorten that window."
+      : "Based on your answers, you generally seem to manage day-to-day stress without it accumulating heavily."},
+    {area:'Sleep habits', dims:['discipline','resilience'], text: (d.discipline<=4&&d.resilience<=4)
+      ? "Inconsistent routines and stress often go hand in hand with less consistent sleep. Worth noticing whether your own sleep pattern shifts along with high-stress stretches."
+      : "Nothing in your answers points to a specific sleep concern, though it's always worth checking in on this directly if it feels off."},
+    {area:'Work-life balance', dims:['boundaries'], text: d.boundaries<=4
+      ? "Your answers suggest boundaries can blur under pressure from others, which is a common precursor to work spilling into personal time. A small, defined cutoff — even one evening a week — can help protect the line."
+      : "Your boundary-setting tendencies suggest a generally healthy separation between work and personal time."},
+    {area:'Burnout risk', dims:['discipline','boundaries','resilience'], text: (d.discipline<=4&&d.boundaries<=4&&d.resilience<=4)
+      ? "This combination of patterns — lower boundaries, lower consistency, and slower stress recovery — is one that can, over time, increase burnout risk if left unaddressed. Worth treating as a genuine flag, not just background noise."
+      : "Nothing in your current pattern strongly points to elevated burnout risk, though this can shift with circumstances, so it's worth revisiting periodically."},
+    {area:'Emotional resilience', dims:['resilience'], text: d.resilience>=7
+      ? "Your answers suggest a real capacity to absorb setbacks and keep moving — a genuine asset worth protecting rather than taking for granted."
+      : "Your answers suggest setbacks can take a real toll before you find your footing again. That's common, not a flaw — but a deliberate recovery habit tends to help."}
+  ];
+}
+function renderWellbeing(d){
+  const wrap=document.getElementById('wellbeing-list'); wrap.innerHTML='';
+  buildWellbeing(d).forEach(w=>{
+    const el=document.createElement('div'); el.className='wellbeing-item';
+    el.innerHTML=`<div class="wellbeing-head"><span class="wellbeing-area">${w.area}</span>${confidenceBadge(w.dims)}</div><p class="wellbeing-text">${w.text}</p>`;
+    wrap.appendChild(el);
+  });
+}
+
+/* ---------- 6. Personalized Growth Plan v2 (habits to build/reduce, weekly challenge, learning, strategies) ---------- */
+const HABIT_REDUCE = {
+  awareness: "Rehashing the same event repeatedly without extracting a concrete lesson from it.",
+  action: "Waiting to feel fully ready before starting something that matters.",
+  discipline: "Relying on motivation or mood to decide whether today's habit happens.",
+  resilience: "Letting 'good enough' quietly replace a standard you actually care about.",
+  adaptability: "Defending a plan past the point the evidence says it's not working.",
+  selftrust: "Asking multiple people for their opinion before trusting a call you're capable of making alone.",
+  boundaries: "Saying yes by default to requests that land outside your actual capacity.",
+  patience: "Abandoning a slow, working plan the moment there's no visible payoff yet.",
+  clarity: "Letting your definition of 'enough' shift depending on who you were just around.",
+  growth: "Treating every setback as pure bad luck instead of checking it for a pattern."
+};
+const LEARNING_FOCUS = {
+  awareness: "Self-observation practices — journaling, feedback-seeking, or a simple daily reflection habit.",
+  action: "Bias-to-action frameworks — how fast-moving people get from idea to first step.",
+  discipline: "Habit and systems design — how identity-based routines survive low-motivation days.",
+  resilience: "Stress physiology and recovery — what actually speeds up bouncing back from setbacks.",
+  adaptability: "Decision-review cadences — building in regular checkpoints to update a strategy.",
+  selftrust: "Decision journaling — tracking your own calls and outcomes to build evidence you can trust.",
+  boundaries: "Assertive communication — scripts and practice for saying no without over-explaining.",
+  patience: "Leading-indicator tracking — measuring effort and process instead of only outcomes.",
+  clarity: "Values clarification exercises — defining what 'enough' and 'success' actually mean to you.",
+  growth: "Post-mortem practices — structured ways to extract a lesson from every setback, yours or others'."
+};
+const STRATEGIES = {
+  awareness: "Ask someone who knows you well to name one pattern of yours, and just listen without defending it.",
+  action: "Use a 2-minute rule: the moment you notice avoidance, do just the first two minutes of the task.",
+  discipline: "Pre-decide tomorrow's single most important task tonight, in writing.",
+  resilience: "Define a fixed reset ritual you run within 24 hours of any setback, before deciding anything.",
+  adaptability: "Set a rule: if something hasn't moved in a fixed number of weeks, change the method, not the effort.",
+  selftrust: "Write your reasons down before you ask anyone else, so you can update on logic, not nerves.",
+  boundaries: "Keep one default sentence ready for overreach — 'I can look at this tomorrow' — and use it before you can talk yourself out of it.",
+  patience: "Track a leading indicator (effort, not outcome) so 'no result yet' stops reading as failing.",
+  clarity: "Write one sentence on what you're optimizing for this year, and re-read it weekly.",
+  growth: "Before a big move, find one person who already failed at it and extract the lesson first."
+};
+const CHALLENGE = {
+  awareness: "This week, write a one-line note each night on the moment you reacted strongest, and what came right before it.",
+  action: "This week, take a real first step — even 15 minutes — on the one thing you've been deferring longest.",
+  discipline: "This week, run your top habit every day, even a stripped-down version, with nothing skipped.",
+  resilience: "This week, notice one place you've let 'good enough' replace a real standard, and raise it back.",
+  adaptability: "This week, retire one small habit or approach you know no longer fits.",
+  selftrust: "This week, make one decision — even a small one — without asking anyone else first.",
+  boundaries: "This week, say one direct, low-stakes 'no' to rebuild the muscle.",
+  patience: "This week, stay with one slow-moving project without switching or abandoning it.",
+  clarity: "This week, write one honest sentence on what you actually want in two years.",
+  growth: "This week, find and talk to one person who's already tried and failed at something you're attempting."
+};
+function buildGrowthPlanV2(d){
+  const sorted = Object.entries(d).sort((a,b)=>a[1]-b[1]);
+  const weakest2 = sorted.slice(0,2).map(([k])=>k);
+  const weakest3 = sorted.slice(0,3).map(([k])=>k);
+  return {
+    build: weakest3.map(k=>ACTION_PLAN[k].week),
+    reduce: weakest3.map(k=>HABIT_REDUCE[k]),
+    challenge: [CHALLENGE[weakest2[0]]],
+    learning: weakest2.map(k=>LEARNING_FOCUS[k]),
+    strategies: weakest3.map(k=>STRATEGIES[k])
+  };
+}
+function fillGrowthList(id, items){
+  const el=document.getElementById(id); el.innerHTML='';
+  items.forEach(text=>{ const li=document.createElement('li'); li.textContent=text; el.appendChild(li); });
+}
+function renderGrowthPlanV2(d){
+  const gp = buildGrowthPlanV2(d);
+  fillGrowthList('growth-build', gp.build);
+  fillGrowthList('growth-reduce', gp.reduce);
+  fillGrowthList('growth-challenge', gp.challenge);
+  fillGrowthList('growth-learning', gp.learning);
+  fillGrowthList('growth-strategies', gp.strategies);
+}
+
 /* ---------- Render orchestration for all report sections ---------- */
-let lastPatternScore=null, lastPoints=[], lastGeneratedAt='';
-function renderV2(dimScores, overall){
+let lastPatternScore=null, lastGeneratedAt='';
+function renderV2(dimScores, overall, archetype){
   // pattern score
   const ps=computePatternScore(overall); lastPatternScore=ps;
   document.getElementById('gauge-svg-wrap').innerHTML=buildGaugeSVG(ps.score, ps.band);
@@ -2127,79 +2468,24 @@ function renderV2(dimScores, overall){
   document.getElementById('radar-svg-wrap').innerHTML=buildRadarSVG(dimScores);
   document.getElementById('dimbars-wrap').innerHTML=buildDimBars(dimScores);
   requestAnimationFrame(()=>setTimeout(()=>{ document.querySelectorAll('.dimbar-fill').forEach(f=>{ f.style.width=f.getAttribute('data-w')+'%'; }); },60));
-  // pattern points
-  const pts=buildPatternPoints(dimScores); lastPoints=pts.map(p=>p.html.replace(/<[^>]+>/g,''));
-  const ul=document.getElementById('pattern-points'); ul.innerHTML='';
-  pts.forEach(p=>{ const li=document.createElement('li'); li.className='pt-item';
-    li.innerHTML=`<span class="pt-ico" style="background:${p.color}">${p.ico}</span><span class="pt-body">${p.html}</span>`; ul.appendChild(li); });
-  // scenarios
+  // 1. executive summary
+  document.getElementById('exec-summary-text').textContent = buildExecutiveSummary(dimScores, archetype, ps);
+  // 2–5. blind spots, behavioral styles, future tendencies, well-being
+  renderBlindSpots(dimScores);
+  renderBehavioralStyles(dimScores);
+  renderFutureTendencies(dimScores);
+  renderWellbeing(dimScores);
+  // scenarios ("where this will bite you")
   const sl=document.getElementById('scenario-list'); sl.innerHTML='';
   buildScenarios(dimScores).forEach(sc=>{ const c=PARAMS[sc.dim].color; const d=document.createElement('div'); d.className='scenario';
     d.innerHTML=`<h4><span class="sc-tag" style="background:${c}22;color:${c}">${PARAMS[sc.dim].label}</span> ${sc.s}</h4>
       <p class="sc-line"><b>The likely move:</b> ${sc.bad}</p>
       <p class="sc-line sc-better"><b>The better move:</b> ${sc.good}</p>`; sl.appendChild(d); });
-  // Phase 1 premium upgrades
-  renderInsights(dimScores);
+  // 6. personalized growth plan v2
+  renderGrowthPlanV2(dimScores);
+  // badges + toolkit
   renderBadgesProgress(dimScores);
   renderToolkit(dimScores);
-}
-
-/* =========================================================================
-   PHASE 1 — premium insights, badges + progress, growth toolkit, share card
-   (all rule-based, runs fully client-side — no backend, no API keys)
-   ========================================================================= */
-
-/* ---------- Premium insights (the "smart" engine) ---------- */
-function buildInsights(d, tr){
-  const ins=[];
-  const sorted=Object.entries(d).sort((a,b)=>b[1]-a[1]);
-  const top=sorted[0], low=sorted[sorted.length-1];
-  const L=k=>PARAMS[k].label.toLowerCase();
-  // decision-making
-  let dm;
-  if(d.selftrust>=7&&d.clarity>=7) dm="Decisive and self-directed. You decide on your own read of a situation and rarely relitigate it — fast, just worth a sanity-check on the big calls.";
-  else if(d.selftrust<=4) dm="Consensus-seeking. You gather outside input before committing. It adds safety, but past a point it outsources decisions you're capable of making alone.";
-  else if(d.adaptability>=7&&d.clarity<=4) dm="Adaptive but searching. You change course easily — a real strength — but without a fixed target it can read as chasing whatever's loudest.";
-  else if(d.action<=4) dm="Deliberate. You weigh options thoroughly before moving; the main risk is the window closing while you weigh.";
-  else dm="Balanced. You blend gut instinct with input and adjust as you go — a flexible, middle-of-the-road style.";
-  ins.push({e:'🧭',t:'Decision-making style',c:'#14b8a6',x:dm});
-  // communication
-  let cm;
-  if(d.boundaries>=7&&d.selftrust>=7) cm="Direct and boundaried. You say what you mean and protect your limits — clear, occasionally blunt.";
-  else if(d.boundaries<=4) cm="Accommodating. You read the room and keep the peace — sometimes at the cost of saying what you actually need.";
-  else if(d.awareness>=7) cm="Thoughtful and measured. You notice the dynamics in a room and choose your words before you speak.";
-  else cm="Even-handed. You adapt your tone to the situation rather than defaulting to one mode.";
-  ins.push({e:'💬',t:'Communication style',c:'#ec4899',x:cm});
-  // stress response
-  let sr;
-  if(d.resilience>=7) sr="Steady under load. Pressure rarely knocks you far off line, and you recover quickly.";
-  else if(d.resilience<=4&&d.patience<=4) sr="Reactive, then recovering. Stress lands hard at first and can spill into the next day before you reset.";
-  else if(d.adaptability<=4) sr="You brace and hold. Under stress you tend to grip the original plan tighter instead of adjusting.";
-  else sr="Moderate. Stress affects you, but you generally find your footing within a day or two.";
-  ins.push({e:'🌊',t:'Stress response',c:'#22c55e',x:sr});
-  // learning style
-  let ls;
-  if(d.growth>=7&&d.awareness>=7) ls="Reflective learner. You pull lessons from setbacks — yours and other people's — and update fast.";
-  else if(d.growth<=4) ls="Experiential learner. Lessons tend to land through direct experience rather than observation — effective, but expensive.";
-  else if(d.adaptability>=7) ls="Experimental. You learn by trying, adjusting, and trying again.";
-  else ls="Steady learner. You build understanding gradually and apply it once it feels solid.";
-  ins.push({e:'📚',t:'Learning style',c:'#84cc16',x:ls});
-  // what surprised us
-  ins.push({e:'✨',t:'What surprised us',c:'#f59e0b',x:`For someone strong in ${L(top[0])} (${top[1]*10}/100), your ${L(low[0])} sitting at ${low[1]*10}/100 is the sharpest contrast in your profile — and that gap is exactly where the most growth is hiding.`});
-  // hidden potential
-  const cand = sorted.slice(2).find(([k,v])=>v>=5) || sorted[2];
-  ins.push({e:'💎',t:'Hidden potential',c:'#f97316',x:`Your ${L(cand[0])} (${cand[1]*10}/100) is quietly solid but not yet one of your headline strengths. Lean into it on purpose and it could become a signature.`});
-  // blind spot
-  ins.push({e:'🕳️',t:'Likely blind spot',c:'#ef4444',x:`${PARAMS[low[0]].label} (${low[1]*10}/100). ${IMPROVEMENT_PHRASES[low[0]]} Because it scores low, you may not even notice it running.`});
-  return ins;
-}
-function renderInsights(d){
-  const g=document.getElementById('insight-grid'); g.innerHTML='';
-  buildInsights(d, trickyProfile).forEach(i=>{
-    const el=document.createElement('div'); el.className='insight-card';
-    el.innerHTML=`<div class="ic-top"><span class="ic-emoji">${i.e}</span><span class="ic-title">${i.t}</span></div><span class="ic-tag" style="background:${i.c}">${i.t.split(' ')[0]}</span><p>${i.x}</p>`;
-    g.appendChild(el);
-  });
 }
 
 /* ---------- Gamification: badges + progress ---------- */

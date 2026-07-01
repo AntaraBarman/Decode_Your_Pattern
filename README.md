@@ -30,7 +30,7 @@ report that is unique to you:
 |---|---|---|
 | 📊 | **Pattern Score (300–900)** | A single, credit-score-style read of your behavioural history, with honest bands. |
 | 🧭 | **10-dimension radar + graded bars** | See where you're strong and where you're stretched, at a glance. |
-| 🧠 | **Style insights** | Decision-making, communication, stress, and learning styles — plus hidden potential & blind spots. |
+| 🧠 | **AI Personality Pattern Report** | A 7-section, fully rule-based report: Executive Summary, Blind Spots & Growth Areas, Behavioral Pattern Analysis (10 sub-styles), Future Tendencies (hedged, never certainties), Well-being Considerations (with a non-medical disclaimer), a Personalized Growth Plan, and a per-insight Confidence Meter based on how consistent your answers were. |
 | 🧬 | **Pattern DNA** | A branded signature of all 10 traits — nobody else's reads the same. |
 | 🌐 | **Life domains** | The same patterns projected onto Career, Relationships, Health, Money, Learning, Leadership. |
 | 💼 | **Recruiter mode** | A professional-competency view — screenshot-ready for a CV or portfolio. |
