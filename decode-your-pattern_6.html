@@ -1873,6 +1873,28 @@ async function downloadPdf(){
   const overallDeadline = performance.now() + 60000; // never take longer than ~60s total
   let skippedBlocks = 0;
 
+  // html2canvas clones the whole live document on every single call to preserve accurate
+  // computed styles, so its cost scales with total page size, not just the one block being
+  // captured. With a report this long (7+ sections, dozens of items), capturing ~15-20 blocks
+  // back-to-back against the full page can turn a few seconds into several minutes. Hiding every
+  // OTHER top-level block (and the floating music button) while one block is being captured
+  // keeps each individual clone small and fast, without changing what ends up in the PDF.
+  const musicBtn = document.querySelector('.music-btn');
+  function hideOthersForCapture(activeBlock){
+    const restore = [];
+    blocks.forEach(b => {
+      if (b !== activeBlock && b.style.display !== 'none') {
+        restore.push([b, b.style.display]);
+        b.style.display = 'none';
+      }
+    });
+    if (musicBtn && musicBtn.style.display !== 'none') {
+      restore.push([musicBtn, musicBtn.style.display]);
+      musicBtn.style.display = 'none';
+    }
+    return () => restore.forEach(([el, disp]) => { el.style.display = disp; });
+  }
+
   try {
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF('p', 'mm', 'a4');
@@ -1887,6 +1909,7 @@ async function downloadPdf(){
       if (performance.now() > overallDeadline) { skippedBlocks++; continue; }
 
       let canvas;
+      const restoreVisibility = hideOthersForCapture(block);
       try {
         canvas = await withTimeout(
           html2canvas(block, { scale: 2, backgroundColor: '#fffdf8', useCORS: true }),
@@ -1897,6 +1920,8 @@ async function downloadPdf(){
         console.error('Skipping a PDF section — capture failed or timed out:', blockErr);
         skippedBlocks++;
         continue; // one bad/slow section must not break the whole report
+      } finally {
+        restoreVisibility();
       }
       if (!canvas || !canvas.width || !canvas.height) { skippedBlocks++; continue; }
 
