@@ -35,7 +35,7 @@ You should see something like `Python 3.12.x`. (If it says "not recognised", res
 
 In **Command Prompt**, paste this (it moves into the backend folder):
 ```cmd
-cd "D:\OneDrive\Desktop\AI Road Map\Project1\phase-b\backend"
+cd "D:\OneDrive\Desktop\AI Road Map\Decode_Your_Pattern\phase-b\backend"
 ```
 
 ## 3. Create a "virtual environment" (a clean sandbox for this project)
