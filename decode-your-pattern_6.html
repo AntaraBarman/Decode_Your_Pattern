@@ -435,7 +435,7 @@
   .honesty b { color:#ffca6a; }
   .report-date { font-size:12.5px; color:var(--text-light-soft); margin:2px 0 14px; font-variant-numeric:tabular-nums; }
 
-  /* game feel */
+  /* playful feel */
   .checkpoint-toast{position:fixed;left:50%;top:16%;transform:translate(-50%,-10px);z-index:120;
     background:linear-gradient(100deg,#19D5BF,#3d8bff);color:#04241f;font-family:'Fraunces',serif;font-weight:700;
     padding:12px 24px;border-radius:99px;box-shadow:0 14px 34px -10px rgba(0,0,0,.6);opacity:0;pointer-events:none;
@@ -500,7 +500,6 @@
   .wrap-card{border-radius:16px;padding:18px 16px;color:#fff;box-shadow:0 10px 24px -12px rgba(0,0,0,.5)}
   .wrap-card .w-label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;opacity:.9;font-weight:700}
   .wrap-card .w-value{font-family:'Fraunces',serif;font-size:18px;margin-top:6px;line-height:1.25;font-weight:700}
-  .timeline-wrap{margin-top:14px}
 
   /* email controls */
   .deliver-grid { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
@@ -600,7 +599,7 @@
     </div>
 
     <div class="nav-row">
-      <button class="btn-secondary" onclick="restartGame()">Back</button>
+      <button class="btn-secondary" onclick="restartAssessment()">Back</button>
       <button class="btn-primary" onclick="submitIntake()">Continue →</button>
     </div>
     <p class="creator-credit-footer">Decode your pattern — created by Antara Barman</p>
@@ -637,7 +636,7 @@
       <div id="q-body"></div>
     </div>
     <div class="nav-row">
-      <button class="btn-secondary" onclick="restartGame()">Restart</button>
+      <button class="btn-secondary" onclick="restartAssessment()">Restart</button>
       <button class="btn-primary" id="next-btn" disabled onclick="nextQuestion()">Next →</button>
     </div>
     <p class="creator-credit-footer">Decode your pattern — created by Antara Barman</p>
@@ -646,7 +645,7 @@
   <div id="result" class="screen">
     <div id="pdf-capture-area">
     <div class="result-head">
-      <p class="eyebrow" id="result-eyebrow">The shape of your game</p>
+      <p class="eyebrow" id="result-eyebrow">The shape of your pattern</p>
       <h2 class="archetype-name" id="archetype-name"></h2>
       <p class="archetype-tagline" id="archetype-tagline"></p>
       <p class="report-date" id="report-date"></p>
@@ -717,7 +716,6 @@
       <p class="label-sub">Unlocked from the shape of your answers. Locked ones show what you're closest to next.</p>
       <div class="badge-row" id="badge-row"></div>
       <div class="progress-note" id="progress-note" style="display:none"></div>
-      <div class="timeline-wrap" id="timeline-wrap"></div>
     </div>
 
     <div class="section-card accent-notice">
@@ -771,14 +769,12 @@
     </div>
 
     <div class="result-actions">
-      <button class="btn-secondary" onclick="restartGame()">Retake with new questions</button>
-      <button class="btn-ghost" id="share-btn" onclick="generateShareCard()">📸 Get my shareable card</button>
-      <button class="btn-ghost" id="html-btn" onclick="downloadHtmlReport()">Save report as file ↓</button>
-      <button class="btn-primary" id="pdf-btn" onclick="downloadPdf()">Download my report as PDF ↓</button>
+      <button class="btn-secondary" onclick="restartAssessment()">Retake with new questions</button>
+      <button class="btn-ghost" id="share-btn" onclick="generateShareCard()">📸 Shareable Card</button>
+      <button class="btn-primary" id="pdf-btn" onclick="downloadPdf()">Download Your Report ↓</button>
     </div>
     <canvas id="share-canvas" width="1080" height="1080" style="display:none"></canvas>
     <p class="share-note" id="pdf-status"></p>
-    <p class="share-note no-print" id="email-status" style="margin-top:6px;"></p>
   </div>
 
 </div>
@@ -1059,14 +1055,14 @@ const ARCHETYPE_ADJ = {
   patience: "patient", clarity: "focused", growth: "hungry"
 };
 const ARCHETYPE_TAGLINE = {
-  awareness: "you see the board before most people notice there's a game",
+  awareness: "you clock what's shifting before most people notice anything's changed",
   action: "you'd rather make a move than keep studying the board",
   discipline: "your systems carry you on the days motivation doesn't",
   resilience: "pressure rarely knocks you far off your line",
   adaptability: "you change the plan the moment the plan stops working",
   selftrust: "your own judgment is the compass you actually follow",
   boundaries: "you know where your time and energy end and other people's begin",
-  patience: "you can hold a long game without needing proof every week",
+  patience: "you can hold a long stretch without needing proof every week",
   clarity: "you usually know exactly what you're aiming at",
   growth: "you treat setbacks, your own and other people's, as fuel"
 };
@@ -1086,7 +1082,7 @@ const TENSION_RULES = [
   {test:(d)=> d.growth>=7 && d.resilience<=4, text:"You extract real lessons from setbacks, but the setbacks themselves still seem to cost you more than they need to. You learn well, just expensively."},
   {test:(d)=> d.clarity>=7 && d.action<=4, text:"You know exactly what you want, which actually makes the gap more visible: this isn't a knowing problem for you, it's a starting problem."},
   {test:(d)=> d.selftrust>=7 && d.awareness<=4, text:"You move with real confidence, but that confidence may be running a little ahead of self-knowledge. Worth checking which instincts are earned and which are just familiar."},
-  {test:(d)=> d.patience>=7 && d.action<=4, text:"You're genuinely good at the long game, but the long game only works if it actually starts. Patience without a beginning just looks like waiting."},
+  {test:(d)=> d.patience>=7 && d.action<=4, text:"You're genuinely good at staying patient for the long run, but that only works if it actually starts. Patience without a beginning just looks like waiting."},
   {test:(d)=> d.discipline<=4 && d.clarity>=7, text:"You know precisely what you want, but the daily systems to actually get there haven't caught up yet. The destination is clear; the road isn't built."}
 ];
 
@@ -1524,7 +1520,7 @@ function buildBoardSVG(dimScores) {
       </g>`;
   });
 
-  return `<svg width="100%" viewBox="0 0 ${W} ${H}" role="img" aria-label="A winding game board trail with 10 stations representing your scores across awareness, action, discipline, resilience, adaptability, self-trust, boundaries, patience, clarity, and growth. Larger, brighter stations indicate higher scores.">
+  return `<svg width="100%" viewBox="0 0 ${W} ${H}" role="img" aria-label="A winding trail with 10 stations representing your scores across awareness, action, discipline, resilience, adaptability, self-trust, boundaries, patience, clarity, and growth. Larger, brighter stations indicate higher scores.">
     <path id="board-trail-path" d="${pathD}" fill="none" stroke="#c9b896" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"></path>
     ${stationsSVG}
   </svg>`;
@@ -1584,7 +1580,7 @@ function computeAndShowResult(){
   lastDimScores = dimScores;
 
   const firstName = profile.name ? profile.name.split(' ')[0] : '';
-  document.getElementById('result-eyebrow').textContent = 'The shape of your game';
+  document.getElementById('result-eyebrow').textContent = 'The shape of your pattern';
 
   const archetype = buildArchetype(dimScores);
   document.getElementById('archetype-name').textContent = archetype.name;
@@ -1596,7 +1592,7 @@ function computeAndShowResult(){
   document.getElementById('overall-score').textContent = overall;
 
   let headline, sub;
-  if (overall >= 80) { headline = "You're playing a sharp game"; sub = "Strong scores across the board — your edge is consistency, not insight."; }
+  if (overall >= 80) { headline = "You're operating with real sharpness"; sub = "Strong scores across the board — your edge is consistency, not insight."; }
   else if (overall >= 60) { headline = "You see the board clearly"; sub = "Solid awareness and follow-through, with a few areas still catching up."; }
   else if (overall >= 40) { headline = "You're mid-puzzle, and that's normal"; sub = "Real clarity in places, some patterns still waiting to be named."; }
   else { headline = "You just started the most honest part"; sub = "Naming where you stand is the hardest step. You already did it."; }
@@ -1879,7 +1875,7 @@ let trickyProfile = {};
 
 /* ---------- 3. Pattern Score (credit-score style 300–900) ---------- */
 const SCORE_BANDS = [
-  {min:800, label:"Exceptional", color:"#22c55e", verdict:"You play a genuinely sharp, self-aware game. Your edge now is protecting consistency and not coasting on it."},
+  {min:800, label:"Exceptional", color:"#22c55e", verdict:"You bring a genuinely sharp, self-aware precision to this. Your edge now is protecting consistency and not coasting on it."},
   {min:740, label:"Strong",      color:"#84cc16", verdict:"You're playing well above average. A couple of weak dimensions are the only thing keeping you from the top band."},
   {min:670, label:"Solid",       color:"#eab308", verdict:"A capable, functional pattern with real strengths — and one or two soft spots quietly taxing the rest."},
   {min:580, label:"Developing",  color:"#f59e0b", verdict:"You have clear strengths, but enough friction in key areas that life feels harder than it needs to. Fixable, but not by ignoring it."},
@@ -2041,38 +2037,6 @@ function renderV2(dimScores, overall){
   renderInsights(dimScores);
   renderBadgesProgress(dimScores);
   renderToolkit(dimScores);
-  renderTimeline();
-}
-
-/* ---------- 11. Report text + downloadable file ---------- */
-function buildReportText(){
-  const d=lastDimScores||{}; const ps=lastPatternScore;
-  const lines=[];
-  lines.push('DECODE YOUR PATTERN — your report');
-  if(profile.name) lines.push('For: '+profile.name);
-  if(lastGeneratedAt) lines.push('Generated: '+lastGeneratedAt);
-  lines.push('');
-  if(ps){ lines.push('PATTERN SCORE: '+ps.score+'/900 ('+ps.band.label+')'); lines.push(ps.band.verdict); lines.push(''); }
-  if(lastReport){ lines.push('Archetype: '+lastReport.archetypeName); lines.push('Overall: '+lastReport.overall+'/100'); lines.push(''); }
-  lines.push('YOUR 10 DIMENSIONS (out of 100):');
-  Object.entries(d).sort((a,b)=>b[1]-a[1]).forEach(([k,s])=>lines.push('  • '+PARAMS[k].label+': '+(s*10)+'/100'));
-  lines.push('');
-  lines.push('PATTERN NOTICE:');
-  lastPoints.forEach(p=>lines.push('  • '+p));
-  lines.push('');
-  lines.push('— Decode your pattern, created by Antara Barman');
-  return lines.join('\n');
-}
-function downloadHtmlReport(){
-  const txt=buildReportText();
-  const html='<!doctype html><meta charset="utf-8"><title>Decode Your Pattern report</title>'+
-    '<body style="font-family:system-ui,sans-serif;max-width:680px;margin:40px auto;padding:0 20px;line-height:1.6;color:#1c1812">'+
-    '<pre style="white-space:pre-wrap;font-family:inherit;font-size:15px">'+escapeHtml(txt)+'</pre></body>';
-  const blob=new Blob([html],{type:'text/html'});
-  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
-  a.download=(profile.name?profile.name.trim().replace(/\s+/g,'-')+'-':'')+'pattern-report.html';
-  document.body.appendChild(a); a.click(); a.remove();
-  document.getElementById('email-status').style.color=''; document.getElementById('email-status').textContent='Saved a copy to your downloads — you can attach it to any email yourself.';
 }
 
 /* =========================================================================
@@ -2185,12 +2149,12 @@ function recordAndRenderProgress(d){
 const TOOLKIT={
  awareness:{podcast:["The Happiness Lab — Dr. Laurie Santos","science-backed episodes on noticing your own mind"],habit:"Each night, write one line: the moment you reacted strongest today, and what came right before it.",meditation:"A 5-minute daily 'noting' practice — label each thought 'thinking' and let it pass.",app:["Insight Timer","thousands of free guided meditations for self-observation"]},
  action:{podcast:["The Tim Ferriss Show","tactics from high performers on starting before you feel ready"],habit:"Use a 2-minute rule: the moment you notice avoidance, do just the first two minutes.",meditation:"3 minutes of box breathing before a task you've been dodging.",app:["Streaks","track one daily action and keep the chain unbroken"]},
- discipline:{podcast:["The Diary of a CEO","long talks on the systems behind consistent people"],habit:"Pre-decide tomorrow's single most important task tonight, in writing.",meditation:"Two minutes of stillness at the same time each day to anchor your routine.",app:["Habitica","turn your habits into a game with streaks and rewards"]},
+ discipline:{podcast:["The Diary of a CEO","long talks on the systems behind consistent people"],habit:"Pre-decide tomorrow's single most important task tonight, in writing.",meditation:"Two minutes of stillness at the same time each day to anchor your routine.",app:["Habitica","adds streaks and rewards to keep your habits sticky"]},
  resilience:{podcast:["Feel Better, Live More — Dr. Rangan Chatterjee","practical resilience and recovery"],habit:"Define one fixed 'reset ritual' you run within 24 hours of any setback.",meditation:"The physiological sigh — two inhales through the nose, one long exhale, ×5.",app:["Headspace","short courses on stress and bouncing back"]},
  adaptability:{podcast:["WorkLife with Adam Grant","rethinking and updating how you operate"],habit:"Once a week ask: what am I still doing out of habit that no longer fits?",meditation:"A 5-minute open-awareness sit — notice the urge to control and let it soften.",app:["Reflectly","a guided journal that nudges you to reframe"]},
  selftrust:{podcast:["The Mel Robbins Podcast","building decision confidence"],habit:"Make one small call this week without asking anyone first; note why you trust it.",meditation:"A short self-compassion meditation before a hard decision.",app:["Finch","a self-care pet that rewards acting on your own judgment"]},
  boundaries:{podcast:["Where Should We Begin? — Esther Perel","the real dynamics of saying no"],habit:"Practice one low-stakes 'no' before this week ends.",meditation:"A grounding body-scan to catch resentment early, before you over-commit.",app:["I Am","daily affirmations for holding your limits"]},
- patience:{podcast:["The Knowledge Project — Shane Parrish","long-game thinking"],habit:"Track a leading indicator (effort, not outcome) so 'no result yet' stops reading as failing.",meditation:"A 10-minute breath-counting sit to build tolerance for stillness.",app:["Calm","daily sessions for sitting with discomfort"]},
+ patience:{podcast:["The Knowledge Project — Shane Parrish","long-term thinking"],habit:"Track a leading indicator (effort, not outcome) so 'no result yet' stops reading as failing.",meditation:"A 10-minute breath-counting sit to build tolerance for stillness.",app:["Calm","daily sessions for sitting with discomfort"]},
  clarity:{podcast:["The Tim Ferriss Show","guests on choosing what to optimise for"],habit:"Write one sentence — what am I actually optimising for this year? Re-read it weekly.",meditation:"A 5-minute values reflection picturing the year you actually want.",app:["Sunsama","plan each day against what truly matters"]},
  growth:{podcast:["Hidden Brain — Shankar Vedantam","the psychology of learning and change"],habit:"Before a big move, find one person who failed at it and extract the lesson first.",meditation:"A brief 'beginner's mind' sit — approach a stuck problem as if it were new.",app:["Coach.me","habit coaching and accountability"]}
 };
@@ -2239,22 +2203,6 @@ function buildAvatar(d){
   let best=AVATARS.explorer,bs=-1;
   for(const k in AVATARS){ const a=AVATARS[k]; const s=a.dims.reduce((t,x)=>t+(d[x]||0),0)/a.dims.length; if(s>bs){bs=s;best=a;} }
   return best;
-}
-
-function renderTimeline(){
-  const wrap=document.getElementById('timeline-wrap'); if(!wrap) return;
-  let hist=[]; try{hist=JSON.parse(localStorage.getItem('dyp-history')||'[]');}catch(e){}
-  if(hist.length<2){ wrap.innerHTML='<p class="label-sub" style="margin:8px 0 0">📅 Retake this next week or next month — your Pattern Score timeline will graph itself here.</p>'; return; }
-  const data=hist.slice(-10); const W=620,H=150,pad=34,minV=300,maxV=900;
-  const X=i=>pad+(i/(data.length-1))*(W-pad*2);
-  const Y=v=>H-pad-((Math.max(minV,Math.min(maxV,v))-minV)/(maxV-minV))*(H-pad*2);
-  let line='', dots='';
-  data.forEach((h,i)=>{ const x=X(i),y=Y(h.score); line+=(i?' L':'M')+x.toFixed(0)+' '+y.toFixed(0);
-    dots+=`<circle cx="${x.toFixed(0)}" cy="${y.toFixed(0)}" r="4" fill="#19D5BF"/><text x="${x.toFixed(0)}" y="${(y-10).toFixed(0)}" text-anchor="middle" font-family="Inter,sans-serif" font-size="11" fill="#b8b0a0">${h.score}</text>`; });
-  wrap.innerHTML=`<p class="label-sub" style="margin:10px 0 4px">📈 Your Pattern Score over your last ${data.length} attempts:</p>
-    <svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Your pattern score over time">
-      <line x1="${pad}" y1="${H-pad}" x2="${W-pad}" y2="${H-pad}" stroke="#353a4a"/>
-      <path d="${line}" fill="none" stroke="#19D5BF" stroke-width="2.5"/>${dots}</svg>`;
 }
 
 /* ---------- Shareable result card (colourful, canvas → PNG) ---------- */
@@ -2317,7 +2265,7 @@ function generateShareCard(){
   }catch(e){ if(st){st.style.color='#e07a5a';st.textContent='Could not build the card in this browser — try the PDF instead.';} }
 }
 
-function restartGame(){ show('intro'); }
+function restartAssessment(){ show('intro'); }
 
 // dynamic question count in intro copy
 (function(){

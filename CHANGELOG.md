@@ -4,6 +4,15 @@ All notable changes to this project are documented here.
 The format is based on [Keep a Changelog](https://keepachangelog.com/), and this project aims to follow
 [Semantic Versioning](https://semver.org/).
 
+## [1.4.0] — 2026-07 — Copy & UX cleanup
+### Changed
+- Removed all "game" framing from the assessment's on-screen copy, insight text, and internal code (result eyebrow, avatar-reveal headline, insight/recommendation strings, function names) in favour of neutral, pattern-focused language.
+- Simplified the Pattern Score description on the landing page (removed the "but for your behaviour" qualifier).
+- Renamed the report actions: **"Download my report as PDF"** → **"Download Your Report"**, **"Get my shareable card"** → **"Shareable Card"**.
+### Removed
+- The **Pattern Score history timeline** ("your last N attempts" chart) and its supporting code.
+- The standalone **"Save report as file"** (plain HTML download) button and its now-unused helper functions.
+
 ## [1.3.0] — 2026-06 — Production-hardening audit
 ### Security
 - Removed a **self-XSS vector**: user-entered goal/obstacle text is now rendered via `textContent`, never `innerHTML`, in the action plan.
