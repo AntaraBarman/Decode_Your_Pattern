@@ -202,7 +202,7 @@ RECOMMENDATIONS: dict[str, dict] = {
                    "podcast": ("Where Should We Begin? — Esther Perel", "the dynamics of saying no"),
                    "habit": "Practice one low-stakes 'no' before the week ends."},
     "patience": {"book": ("The Obstacle Is the Way — Ryan Holiday", "holding steady without a quick payoff"),
-                 "podcast": ("The Knowledge Project — Shane Parrish", "long-game thinking"),
+                 "podcast": ("The Knowledge Project — Shane Parrish", "long-term thinking"),
                  "habit": "Track a leading indicator (effort, not outcome)."},
     "clarity": {"book": ("Essentialism — Greg McKeown", "deciding what actually matters"),
                 "podcast": ("The Tim Ferriss Show", "choosing what to optimise for"),
